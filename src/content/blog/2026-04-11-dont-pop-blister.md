@@ -5,8 +5,6 @@ description: "手痒想挑水泡？忍住！那层皮是你自带的创可贴。
 tags: ["科普", "健康", "急救常识"]
 ---
 
-<video src="https://i.829259.xyz/api/cfile/BAACAgUAAx0ER6IxDQACTsFp2jcaKQlS-TDGx3xvEXVs3OOCbAACER8AAifl0VbALmGqYERp4jsE" controls style="max-width: 100%; height: auto;"></video>
-
 看到水泡是不是手痒想挑破？**千万忍住！**
 
 那层泡皮是你身体自带的“天然创可贴”，挑破了反而容易感染、更疼、好得慢。
