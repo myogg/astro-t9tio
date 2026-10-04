@@ -110,8 +110,15 @@ Cloudflare requirements:
 
 - Worker name must stay `astro-t9tio` (see `wrangler.jsonc`).
 - Deploy command must be `npx wrangler deploy` (or `npm run deploy`).
-- Set the secret in the Worker environment: `TTS_API_TOKEN`
-  (and optionally `TTS_API_URL`).
+- The token must be a **Worker Secret**, never a value in this repo (the repo is
+  public). Set it once — secrets persist across deploys:
+
+  ```bash
+  printf '<token>' | npx wrangler secret put TTS_API_TOKEN
+  ```
+
+  Optionally set `TTS_API_URL` the same way to override the default
+  `https://tts.134688.xyz`.
 
 `wrangler dev` serves the Worker locally, but read-aloud only produces audio
 when `TTS_API_TOKEN` is present.
