@@ -18,6 +18,7 @@ npm run dev      # start dev server at http://localhost:4321
 npm run build    # build to ./dist
 npm run preview  # preview the production build
 npm run check    # type-check .astro files
+npm run deploy   # build + deploy to Cloudflare Workers (wrangler)
 ```
 
 ## Project structure
@@ -40,6 +41,9 @@ src/
 │   └── rss.xml.ts         # RSS feed
 ├── styles/                # bulma.css, blog.css, index.css (original, unchanged)
 └── utils/date.ts
+
+worker/index.ts            # Cloudflare Worker: /api/tts proxy + static assets
+wrangler.jsonc             # Worker config (name, assets dir, entrypoint)
 ```
 
 ## Hexo → Astro mapping
@@ -91,6 +95,26 @@ Edit `src/config.ts`:
 | `googleAnalytics` | GA measurement ID — **empty disables analytics** |
 
 Also update `site` in `astro.config.mjs` to your production URL.
+
+## Text-to-speech (TTS)
+
+Post pages show a "听全文" player that reads the article aloud (ported from the
+`astro-aria` blog). `src/components/TtsPlayer.astro` splits the article text
+into ~300-char chunks and requests each chunk from the same-origin `GET /api/tts`.
+
+`/api/tts` is served by the Cloudflare Worker in `worker/index.ts`, which
+forwards to `env.TTS_API_URL` (default `https://tts.134688.xyz`) and appends
+`env.TTS_API_TOKEN` server-side — the token never reaches the browser.
+
+Cloudflare requirements:
+
+- Worker name must stay `astro-t9tio` (see `wrangler.jsonc`).
+- Deploy command must be `npx wrangler deploy` (or `npm run deploy`).
+- Set the secret in the Worker environment: `TTS_API_TOKEN`
+  (and optionally `TTS_API_URL`).
+
+`wrangler dev` serves the Worker locally, but read-aloud only produces audio
+when `TTS_API_TOKEN` is present.
 
 ## Differences from the Hexo original
 

@@ -1,0 +1,455 @@
+---
+// TTS player — ported from the astro-aria blog (`src/layouts/post.astro`).
+// Audio is synthesized through the same-origin `/api/tts` Worker proxy, so the
+// upstream token never reaches the browser.
+---
+
+<div id="tts-player" class="tts-player">
+  <button id="tts-toggle" type="button" class="tts-play" aria-label="听全文">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+      <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.68L9.54 5.98A1 1 0 0 0 8 6.82Z"></path>
+    </svg>
+  </button>
+
+  <span id="tts-label" data-tts-idle class="tts-label">听全文</span>
+  <span data-tts-idle class="tts-sep" aria-hidden="true"></span>
+  <span id="tts-time" class="tts-time">0:00</span>
+
+  <span data-tts-extra class="tts-sep" aria-hidden="true" style="display:none"></span>
+
+  <button id="tts-back" data-tts-extra type="button" class="tts-icon" style="display:none" aria-label="后退 15 秒">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4a8 8 0 1 0 8 8"></path>
+        <path d="M12 4l3.2-2.4M12 4l3.2 2.4"></path>
+      </g>
+      <text x="12" y="16.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="currentColor">15</text>
+    </svg>
+  </button>
+
+  <button id="tts-forward" data-tts-extra type="button" class="tts-icon" style="display:none" aria-label="前进 15 秒">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4a8 8 0 1 1-8 8"></path>
+        <path d="M12 4l-3.2-2.4M12 4l-3.2 2.4"></path>
+      </g>
+      <text x="12" y="16.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="currentColor">15</text>
+    </svg>
+  </button>
+
+  <button id="tts-speed" data-tts-extra type="button" class="tts-speed" style="display:none" aria-label="播放速度">1x</button>
+
+  <button id="tts-share" type="button" class="tts-share" aria-label="分享本文">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="20" height="20">
+      <path d="M9.5 14.5 14.5 9.5"></path>
+      <path d="M13 7.5l1.4-1.4a3.4 3.4 0 0 1 4.8 4.8L17.8 12.3"></path>
+      <path d="M11 16.5l-1.4 1.4a3.4 3.4 0 0 1-4.8-4.8L6.2 11.7"></path>
+    </svg>
+    <span id="tts-share-label">分享</span>
+  </button>
+
+  <p id="tts-status" class="tts-status" style="display:none"></p>
+</div>
+
+<style>
+  .tts-player {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0 28px;
+    padding-top: 14px;
+    border-top: 1px solid #eee;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+      sans-serif;
+    color: #24292e;
+  }
+  .tts-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background: #f0f0f0;
+    color: #24292e;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .tts-play:hover {
+    background: #e4e4e4;
+  }
+  .tts-label,
+  .tts-time {
+    font-size: 17px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .tts-sep {
+    width: 1px;
+    height: 22px;
+    background: #ddd;
+    flex-shrink: 0;
+  }
+  .tts-icon {
+    border: none;
+    background: transparent;
+    color: #24292e;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    line-height: 0;
+    transition: color 0.15s;
+  }
+  .tts-icon:hover {
+    color: #888;
+  }
+  .tts-speed {
+    flex-shrink: 0;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    background: transparent;
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: #24292e;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .tts-speed:hover {
+    border-color: #888;
+  }
+  .tts-share {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background: transparent;
+    color: #24292e;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .tts-share:hover {
+    color: #888;
+  }
+  .tts-status {
+    flex-basis: 100%;
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: #888;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var player = document.getElementById('tts-player');
+    var article = document.getElementById('article-content');
+    if (!player) return;
+    if (!article) {
+      player.style.display = 'none';
+      return;
+    }
+
+    var toggleBtn = document.getElementById('tts-toggle');
+    var timeEl = document.getElementById('tts-time');
+    var backBtn = document.getElementById('tts-back');
+    var forwardBtn = document.getElementById('tts-forward');
+    var speedBtn = document.getElementById('tts-speed');
+    var shareBtn = document.getElementById('tts-share');
+    var shareLabel = document.getElementById('tts-share-label');
+    var statusEl = document.getElementById('tts-status');
+
+    // token 只在 Worker 环境变量里，浏览器打同源代理，页面源码看不到它
+    var TTS_ENDPOINT = '/api/tts';
+    var VOICE = 'zh-CN-XiaoxiaoNeural';
+    var SPEEDS = [1, 1.25, 1.5, 1.75, 2];
+    var SKIP = 15;
+    // 合成前拿不到真实音频长度，按中文语速估算总时长
+    var CHARS_PER_SEC = 4.8;
+
+    var playIcon =
+      '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.68L9.54 5.98A1 1 0 0 0 8 6.82Z"></path></svg>';
+    var pauseIcon =
+      '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><rect x="7" y="5" width="3.6" height="14" rx="1.2"></rect><rect x="13.4" y="5" width="3.6" height="14" rx="1.2"></rect></svg>';
+    var spinnerIcon =
+      '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="20" height="20" class="tts-spin"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.25"></circle><path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path></svg>';
+
+    // 正文之外的块（标签、评论区等）加 not-prose / no-tts 就不会被朗读
+    var readableText = function () {
+      var parts = [];
+      var children = article.children;
+      for (var i = 0; i < children.length; i++) {
+        var el = children[i];
+        if (el.classList.contains('not-prose') || el.classList.contains('no-tts')) continue;
+        parts.push(el.innerText || el.textContent || '');
+      }
+      return parts.join('\n').replace(/\s+/g, ' ').trim();
+    };
+
+    var chunks = [];
+    var blobs = {};
+    var durations = [];
+    var index = 0;
+    var audio = null;
+    var playing = false;
+    var loading = false;
+    var started = false;
+    var abortController = null;
+    var speedIndex = 0;
+    var estimated = 0;
+
+    var formatTime = function (seconds) {
+      var total = Math.max(0, Math.floor(seconds || 0));
+      return Math.floor(total / 60) + ':' + String(total % 60).padStart(2, '0');
+    };
+
+    var offsetOf = function (i) {
+      var sum = 0;
+      for (var k = 0; k < i; k++) sum += durations[k] || 0;
+      return sum;
+    };
+
+    var renderTime = function () {
+      timeEl.textContent =
+        started || loading
+          ? formatTime(offsetOf(index) + (audio ? audio.currentTime : 0))
+          : formatTime(estimated);
+    };
+
+    var setStatus = function (text) {
+      if (!statusEl) return;
+      statusEl.textContent = text || '';
+      statusEl.style.display = text ? 'block' : 'none';
+    };
+
+    var idleEls = player.querySelectorAll('[data-tts-idle]');
+    var extras = player.querySelectorAll('[data-tts-extra]');
+
+    var updateUI = function () {
+      var idle = !loading && !started;
+      for (var i = 0; i < idleEls.length; i++) idleEls[i].style.display = idle ? '' : 'none';
+      for (var j = 0; j < extras.length; j++) extras[j].style.display = idle ? 'none' : '';
+      renderTime();
+      toggleBtn.innerHTML = loading ? spinnerIcon : playing ? pauseIcon : playIcon;
+      var label = loading ? '加载中' : playing ? '暂停' : started ? '继续播放' : '听全文';
+      toggleBtn.setAttribute('aria-label', label);
+      toggleBtn.setAttribute('aria-pressed', String(playing));
+    };
+
+    function splitText(text, maxLen) {
+      var parts = [];
+      var rest = text;
+      while (rest.length > maxLen) {
+        var cut = maxLen;
+        var chunk = rest.slice(0, maxLen);
+        var stop = Math.max(
+          chunk.lastIndexOf('。'),
+          chunk.lastIndexOf('！'),
+          chunk.lastIndexOf('？'),
+          chunk.lastIndexOf('\n')
+        );
+        if (stop > maxLen * 0.4) cut = stop + 1;
+        parts.push(rest.slice(0, cut).trim());
+        rest = rest.slice(cut).trim();
+      }
+      if (rest.trim()) parts.push(rest.trim());
+      return parts;
+    }
+
+    function getBlob(i) {
+      if (blobs[i]) return Promise.resolve(blobs[i]);
+      var params = new URLSearchParams({ text: chunks[i], voiceName: VOICE });
+      return fetch(TTS_ENDPOINT + '?' + params, {
+        signal: abortController.signal,
+      }).then(function (res) {
+        if (!res.ok) throw new Error('TTS API error');
+        return res.blob();
+      }).then(function (blob) {
+        blobs[i] = blob;
+        return blob;
+      });
+    }
+
+    var prefetch = function (i) {
+      if (i < 0 || i >= chunks.length || blobs[i]) return;
+      getBlob(i).catch(function () {});
+    };
+
+    var detachAudio = function () {
+      if (!audio) return;
+      audio.pause();
+      if (audio.dataset.url) URL.revokeObjectURL(audio.dataset.url);
+      audio = null;
+    };
+
+    function playFrom(i, seek) {
+      seek = seek || 0;
+      if (i >= chunks.length) {
+        detachAudio();
+        playing = false;
+        started = false;
+        index = 0;
+        renderTime();
+        updateUI();
+        return;
+      }
+
+      var target = Math.max(0, i);
+      detachAudio();
+      index = target;
+      loading = true;
+      updateUI();
+      setStatus('正在合成第 ' + (target + 1) + '/' + chunks.length + ' 段');
+
+      getBlob(target).then(function (blob) {
+        loading = false;
+        setStatus('');
+
+        var url = URL.createObjectURL(blob);
+        var el = new Audio(url);
+        el.dataset.url = url;
+        el.playbackRate = SPEEDS[speedIndex];
+        audio = el;
+
+        el.addEventListener('loadedmetadata', function () {
+          if (Number.isFinite(el.duration)) durations[target] = el.duration;
+          if (seek > 0) el.currentTime = Math.min(seek, el.duration || seek);
+          renderTime();
+        });
+        el.addEventListener('timeupdate', renderTime);
+        el.addEventListener('ended', function () {
+          playFrom(target + 1);
+        });
+        el.addEventListener('error', function () {
+          playFrom(target + 1);
+        });
+
+        return el.play().then(
+          function () {
+            playing = true;
+            started = true;
+          },
+          function () {
+            playing = false;
+          }
+        ).then(function () {
+          updateUI();
+          prefetch(target + 1);
+        });
+      }).catch(function () {
+        if (abortController && abortController.signal.aborted) return;
+        loading = false;
+        playing = false;
+        updateUI();
+        setStatus('语音合成失败，请稍后重试');
+      });
+    }
+
+    var start = function () {
+      chunks = splitText(readableText(), 300);
+      if (!chunks.length) return;
+      abortController = new AbortController();
+      durations = [];
+      playFrom(0);
+    };
+
+    var handleToggle = function () {
+      if (loading) return;
+      if (!started) {
+        start();
+        return;
+      }
+      if (!audio) return;
+      if (playing) {
+        audio.pause();
+        playing = false;
+      } else {
+        audio.play();
+        playing = true;
+      }
+      updateUI();
+    };
+
+    var skip = function (delta) {
+      if (!started || !audio || loading) return;
+      var next = audio.currentTime + delta;
+      if (next < 0) {
+        if (index === 0) {
+          audio.currentTime = 0;
+          renderTime();
+        } else {
+          playFrom(index - 1, Math.max(0, (durations[index - 1] || 0) + next));
+        }
+        return;
+      }
+      var duration = Number.isFinite(audio.duration) ? audio.duration : null;
+      if (duration !== null && next > duration) {
+        if (index + 1 < chunks.length) playFrom(index + 1, next - duration);
+        else {
+          audio.currentTime = duration;
+          renderTime();
+        }
+        return;
+      }
+      audio.currentTime = next;
+      renderTime();
+    };
+
+    var cycleSpeed = function () {
+      speedIndex = (speedIndex + 1) % SPEEDS.length;
+      var rate = SPEEDS[speedIndex];
+      if (audio) audio.playbackRate = rate;
+      speedBtn.textContent = rate + 'x';
+    };
+
+    var shareTimer;
+    var flashShare = function (text) {
+      if (!shareLabel) return;
+      shareLabel.textContent = text;
+      clearTimeout(shareTimer);
+      shareTimer = setTimeout(function () {
+        shareLabel.textContent = '分享';
+      }, 2000);
+    };
+
+    var handleShare = function () {
+      var url = location.href;
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: url }).catch(function () {});
+        return;
+      }
+      navigator.clipboard.writeText(url).then(
+        function () {
+          flashShare('已复制链接');
+        },
+        function () {
+          flashShare('复制失败');
+        }
+      );
+    };
+
+    var stopAll = function () {
+      if (abortController) abortController.abort();
+      detachAudio();
+      playing = false;
+    };
+
+    toggleBtn.addEventListener('click', handleToggle);
+    if (backBtn) backBtn.addEventListener('click', function () { skip(-SKIP); });
+    if (forwardBtn) forwardBtn.addEventListener('click', function () { skip(SKIP); });
+    if (speedBtn) speedBtn.addEventListener('click', cycleSpeed);
+    if (shareBtn) shareBtn.addEventListener('click', handleShare);
+    window.addEventListener('beforeunload', stopAll);
+
+    var initialText = readableText();
+    if (initialText) estimated = initialText.length / CHARS_PER_SEC;
+    else player.style.display = 'none';
+    updateUI();
+  })();
+</script>

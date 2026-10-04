@@ -5,6 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import { site } from '../config';
 import { formatDate } from '../utils/date';
+import TtsPlayer from '../components/TtsPlayer.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -30,7 +31,9 @@ const description = post.data.description ?? site.description;
       {!post.data.author && <>by <a href={site.authorUrl}>{site.author}</a></>}
     </p>
 
-    <article class="markdown-body">
+    <TtsPlayer />
+
+    <article id="article-content" class="markdown-body">
       <Content />
     </article>
 
