@@ -1,0 +1,24 @@
+---
+// Port of `_partial/header.ejs` — used on the index page.
+import { site } from '../config';
+---
+
+<div class="blog-header">
+  <nav
+    style="border-bottom: 1px solid rgba(0,0,0,.1); position:fixed; top:0; width:100%; background-color: white; z-index: 10"
+  >
+    <div class="container post-container">
+      <div style="float:left">
+        <a class="button is-white" href="/" style="padding: 23px 5px 23px 5px">
+          <img src="/favicon/favicon.ico" width="28" height="28" alt="logo" />
+        </a>
+      </div>
+      <div style="float:right">
+        <a class="button is-white" href="/" style="padding: 23px 5px 23px 5px">
+          <strong style="color: #555">Blogs</strong>
+        </a>
+      </div>
+    </div>
+  </nav>
+  {site.subtitle && <p class="lead blog-description">{site.subtitle}</p>}
+</div>

@@ -1,0 +1,32 @@
+---
+// Port of `_partial/article-excerpt.ejs` — a card with title, meta, excerpt
+// and a "read more" link. Useful for custom listing pages.
+import type { CollectionEntry } from 'astro:content';
+import { site } from '../config';
+import { formatDate } from '../utils/date';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const excerpt = post.data.description;
+---
+
+<div class="blog-post">
+  <h2 class="blog-post-title">
+    <a href={`/${post.id}/`}>{post.data.title}</a>
+  </h2>
+  <p class="blog-post-meta">
+    {formatDate(post.data.date)}
+    {post.data.author && <> by {post.data.author}</>}
+  </p>
+  {excerpt && <p>{excerpt}</p>}
+  {
+    excerpt && (
+      <p>
+        <a href={`/${post.id}/`}>{site.excerptLink}</a>
+      </p>
+    )
+  }
+</div>

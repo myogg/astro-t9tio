@@ -1,0 +1,17 @@
+{
+  "name": "t9t-blog-astro",
+  "version": "1.0.0",
+  "description": "Astro port of the t9t-blog-hexo theme",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.0",
+    "astro": "^5.0.0"
+  }
+}

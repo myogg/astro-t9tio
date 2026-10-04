@@ -1,0 +1,21 @@
+---
+// Port of `_partial/menu.ejs` — renders `site.menu` as a horizontal nav bar.
+// Drop <Menu /> into any page/layout where you want it.
+import { site } from '../config';
+
+const items = Object.entries(site.menu);
+---
+
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+      {
+        items.map(([label, href]) => (
+          <a class="blog-nav-item" href={href}>
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</div>

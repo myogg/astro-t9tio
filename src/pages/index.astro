@@ -1,0 +1,33 @@
+---
+// Port of `layout/index.ejs` — chronological list of posts.
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import { site } from '../config';
+import { formatMonthYear } from '../utils/date';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<BaseLayout title={site.title} description={site.description}>
+  <Header />
+
+  <div class="section container blogli" style="margin-top: 50px">
+    <ul style="list-style-type: none;">
+      {
+        posts.map((post) => (
+          <li style="padding: 0 0 15px 0;">
+            <h2 class="title is-6">
+              <a href={`/${post.id}/`}>{post.data.title}</a>
+            </h2>
+            <p class="subtitle is-7 has-text-grey-light">
+              {formatMonthYear(post.data.date)}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>

@@ -1,0 +1,65 @@
+---
+// Port of `layout/post.ejs` — single post page.
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import { site } from '../config';
+import { formatDate } from '../utils/date';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const description = post.data.description ?? site.description;
+---
+
+<BaseLayout title={post.data.title} description={description}>
+  <Header />
+
+  <div class="section container post-container" style="margin-top: 50px">
+    <h2 class="title">{post.data.title}</h2>
+
+    <p class="subtitle is-7 has-text-grey" style="padding-top: 5px;">
+      {formatDate(post.data.date)}
+      {!post.data.author && <>by <a href={site.authorUrl}>{site.author}</a></>}
+    </p>
+
+    <article class="markdown-body">
+      <Content />
+    </article>
+
+    <hr />
+
+    {
+      site.disqusShortname && (
+        <div id="disqus_thread">Using disqus as comment system</div>
+      )
+    }
+  </div>
+
+  {
+    site.disqusShortname && (
+      <script
+        is:inline
+        define:vars={{ shortname: site.disqusShortname, url: Astro.url.href }}
+      >
+        var disqus_shortname = shortname;
+        var disqus_url = url;
+        (function () {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] ||
+            document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    )
+  }
+</BaseLayout>
