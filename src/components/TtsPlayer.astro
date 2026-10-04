@@ -56,9 +56,9 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
-    margin: 8px 0 28px;
-    padding-top: 14px;
+    gap: 8px;
+    margin: 6px 0 22px;
+    padding-top: 12px;
     border-top: 1px solid #eee;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
       sans-serif;
@@ -68,8 +68,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
     flex-shrink: 0;
     border: none;
     border-radius: 50%;
@@ -83,13 +83,13 @@
   }
   .tts-label,
   .tts-time {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     font-variant-numeric: tabular-nums;
   }
   .tts-sep {
     width: 1px;
-    height: 22px;
+    height: 18px;
     background: #ddd;
     flex-shrink: 0;
   }
@@ -144,10 +144,30 @@
     font-size: 12px;
     color: #888;
   }
+  .tts-play svg {
+    width: 18px;
+    height: 18px;
+  }
+  .tts-share svg {
+    width: 17px;
+    height: 17px;
+  }
+  .tts-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .tts-spin {
+    animation: tts-rotate 0.9s linear infinite;
+  }
+  @keyframes tts-rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 </style>
 
 <script is:inline>
-  (function () {
+  function initTts() {
     var player = document.getElementById('tts-player');
     var article = document.getElementById('article-content');
     if (!player) return;
@@ -451,5 +471,13 @@
     if (initialText) estimated = initialText.length / CHARS_PER_SEC;
     else player.style.display = 'none';
     updateUI();
-  })();
+  }
+
+  // 组件在 <article id="article-content"> 之前渲染，inline 脚本会先于文章执行，
+  // 所以要等 DOM 就绪后再初始化。
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTts);
+  } else {
+    initTts();
+  }
 </script>
