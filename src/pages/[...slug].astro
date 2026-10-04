@@ -26,12 +26,15 @@ const description = post.data.description ?? site.description;
   <div class="section container post-container" style="margin-top: 50px">
     <h2 class="title">{post.data.title}</h2>
 
-    <p class="subtitle is-7 has-text-grey" style="padding-top: 5px;">
-      {formatDate(post.data.date)}
-      {!post.data.author && <>by <a href={site.authorUrl}>{site.author}</a></>}
-    </p>
-
-    <TtsPlayer />
+    <div
+      style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding-top:5px; margin-bottom:22px;"
+    >
+      <p class="subtitle is-7 has-text-grey" style="margin:0;">
+        {formatDate(post.data.date)}
+        {!post.data.author && <>by <a href={site.authorUrl}>{site.author}</a></>}
+      </p>
+      <TtsPlayer />
+    </div>
 
     <article id="article-content" class="markdown-body">
       <Content />

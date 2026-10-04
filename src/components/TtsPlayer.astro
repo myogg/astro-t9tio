@@ -2,23 +2,24 @@
 // TTS player — ported from the astro-aria blog (`src/layouts/post.astro`).
 // Audio is synthesized through the same-origin `/api/tts` Worker proxy, so the
 // upstream token never reaches the browser.
+// Sits inline on the post meta row (same line as the date), aligned right.
 ---
 
 <div id="tts-player" class="tts-player">
-  <button id="tts-toggle" type="button" class="tts-play" aria-label="听全文">
-    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+  <button id="tts-toggle" type="button" class="tts-play" aria-label="聆听文章">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
       <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.68L9.54 5.98A1 1 0 0 0 8 6.82Z"></path>
     </svg>
   </button>
 
-  <span id="tts-label" data-tts-idle class="tts-label">听全文</span>
+  <span id="tts-label" data-tts-idle class="tts-label">聆听文章</span>
   <span data-tts-idle class="tts-sep" aria-hidden="true"></span>
   <span id="tts-time" class="tts-time">0:00</span>
 
   <span data-tts-extra class="tts-sep" aria-hidden="true" style="display:none"></span>
 
   <button id="tts-back" data-tts-extra type="button" class="tts-icon" style="display:none" aria-label="后退 15 秒">
-    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
       <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 4a8 8 0 1 0 8 8"></path>
         <path d="M12 4l3.2-2.4M12 4l3.2 2.4"></path>
@@ -28,7 +29,7 @@
   </button>
 
   <button id="tts-forward" data-tts-extra type="button" class="tts-icon" style="display:none" aria-label="前进 15 秒">
-    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
       <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 4a8 8 0 1 1-8 8"></path>
         <path d="M12 4l-3.2-2.4M12 4l-3.2 2.4"></path>
@@ -39,27 +40,14 @@
 
   <button id="tts-speed" data-tts-extra type="button" class="tts-speed" style="display:none" aria-label="播放速度">1x</button>
 
-  <button id="tts-share" type="button" class="tts-share" aria-label="分享本文">
-    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="20" height="20">
-      <path d="M9.5 14.5 14.5 9.5"></path>
-      <path d="M13 7.5l1.4-1.4a3.4 3.4 0 0 1 4.8 4.8L17.8 12.3"></path>
-      <path d="M11 16.5l-1.4 1.4a3.4 3.4 0 0 1-4.8-4.8L6.2 11.7"></path>
-    </svg>
-    <span id="tts-share-label">分享</span>
-  </button>
-
-  <p id="tts-status" class="tts-status" style="display:none"></p>
+  <span id="tts-status" class="tts-status" style="display:none"></span>
 </div>
 
 <style>
   .tts-player {
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin: 6px 0 22px;
-    padding-top: 12px;
-    border-top: 1px solid #eee;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
       sans-serif;
     color: #24292e;
@@ -68,8 +56,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
     border: none;
     border-radius: 50%;
@@ -81,15 +69,20 @@
   .tts-play:hover {
     background: #e4e4e4;
   }
+  .tts-play svg {
+    width: 16px;
+    height: 16px;
+  }
   .tts-label,
   .tts-time {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     font-variant-numeric: tabular-nums;
+    white-space: nowrap;
   }
   .tts-sep {
     width: 1px;
-    height: 18px;
+    height: 16px;
     background: #ddd;
     flex-shrink: 0;
   }
@@ -106,13 +99,17 @@
   .tts-icon:hover {
     color: #888;
   }
+  .tts-icon svg {
+    width: 18px;
+    height: 18px;
+  }
   .tts-speed {
     flex-shrink: 0;
     border: 1px solid #ccc;
     border-radius: 999px;
     background: transparent;
-    padding: 4px 12px;
-    font-size: 14px;
+    padding: 2px 10px;
+    font-size: 13px;
     font-weight: 500;
     font-variant-numeric: tabular-nums;
     color: #24292e;
@@ -122,39 +119,10 @@
   .tts-speed:hover {
     border-color: #888;
   }
-  .tts-share {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    border: none;
-    background: transparent;
-    color: #24292e;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    flex-shrink: 0;
-  }
-  .tts-share:hover {
-    color: #888;
-  }
   .tts-status {
-    flex-basis: 100%;
-    margin: 6px 0 0;
     font-size: 12px;
     color: #888;
-  }
-  .tts-play svg {
-    width: 18px;
-    height: 18px;
-  }
-  .tts-share svg {
-    width: 17px;
-    height: 17px;
-  }
-  .tts-icon svg {
-    width: 20px;
-    height: 20px;
+    white-space: nowrap;
   }
   .tts-spin {
     animation: tts-rotate 0.9s linear infinite;
@@ -181,8 +149,6 @@
     var backBtn = document.getElementById('tts-back');
     var forwardBtn = document.getElementById('tts-forward');
     var speedBtn = document.getElementById('tts-speed');
-    var shareBtn = document.getElementById('tts-share');
-    var shareLabel = document.getElementById('tts-share-label');
     var statusEl = document.getElementById('tts-status');
 
     // token 只在 Worker 环境变量里，浏览器打同源代理，页面源码看不到它
@@ -194,11 +160,11 @@
     var CHARS_PER_SEC = 4.8;
 
     var playIcon =
-      '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.68L9.54 5.98A1 1 0 0 0 8 6.82Z"></path></svg>';
+      '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.68L9.54 5.98A1 1 0 0 0 8 6.82Z"></path></svg>';
     var pauseIcon =
-      '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><rect x="7" y="5" width="3.6" height="14" rx="1.2"></rect><rect x="13.4" y="5" width="3.6" height="14" rx="1.2"></rect></svg>';
+      '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><rect x="7" y="5" width="3.6" height="14" rx="1.2"></rect><rect x="13.4" y="5" width="3.6" height="14" rx="1.2"></rect></svg>';
     var spinnerIcon =
-      '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="20" height="20" class="tts-spin"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.25"></circle><path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path></svg>';
+      '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="16" height="16" class="tts-spin"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.25"></circle><path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path></svg>';
 
     // 正文之外的块（标签、评论区等）加 not-prose / no-tts 就不会被朗读
     var readableText = function () {
@@ -245,7 +211,7 @@
     var setStatus = function (text) {
       if (!statusEl) return;
       statusEl.textContent = text || '';
-      statusEl.style.display = text ? 'block' : 'none';
+      statusEl.style.display = text ? 'inline' : 'none';
     };
 
     var idleEls = player.querySelectorAll('[data-tts-idle]');
@@ -257,7 +223,7 @@
       for (var j = 0; j < extras.length; j++) extras[j].style.display = idle ? 'none' : '';
       renderTime();
       toggleBtn.innerHTML = loading ? spinnerIcon : playing ? pauseIcon : playIcon;
-      var label = loading ? '加载中' : playing ? '暂停' : started ? '继续播放' : '听全文';
+      var label = loading ? '加载中' : playing ? '暂停' : started ? '继续播放' : '聆听文章';
       toggleBtn.setAttribute('aria-label', label);
       toggleBtn.setAttribute('aria-pressed', String(playing));
     };
@@ -325,7 +291,7 @@
       index = target;
       loading = true;
       updateUI();
-      setStatus('正在合成第 ' + (target + 1) + '/' + chunks.length + ' 段');
+      setStatus('正在合成 ' + (target + 1) + '/' + chunks.length + ' 段');
 
       getBlob(target).then(function (blob) {
         loading = false;
@@ -428,32 +394,6 @@
       speedBtn.textContent = rate + 'x';
     };
 
-    var shareTimer;
-    var flashShare = function (text) {
-      if (!shareLabel) return;
-      shareLabel.textContent = text;
-      clearTimeout(shareTimer);
-      shareTimer = setTimeout(function () {
-        shareLabel.textContent = '分享';
-      }, 2000);
-    };
-
-    var handleShare = function () {
-      var url = location.href;
-      if (navigator.share) {
-        navigator.share({ title: document.title, url: url }).catch(function () {});
-        return;
-      }
-      navigator.clipboard.writeText(url).then(
-        function () {
-          flashShare('已复制链接');
-        },
-        function () {
-          flashShare('复制失败');
-        }
-      );
-    };
-
     var stopAll = function () {
       if (abortController) abortController.abort();
       detachAudio();
@@ -464,7 +404,6 @@
     if (backBtn) backBtn.addEventListener('click', function () { skip(-SKIP); });
     if (forwardBtn) forwardBtn.addEventListener('click', function () { skip(SKIP); });
     if (speedBtn) speedBtn.addEventListener('click', cycleSpeed);
-    if (shareBtn) shareBtn.addEventListener('click', handleShare);
     window.addEventListener('beforeunload', stopAll);
 
     var initialText = readableText();
