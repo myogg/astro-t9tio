@@ -1,0 +1,35 @@
+---
+// giscus comments — backed by GitHub Discussions.
+// Renders nothing until `repoId` and `categoryId` are set in src/config.ts.
+import { site } from '../config';
+
+const { repo, repoId, category, categoryId, mapping, reactionsEnabled, inputPosition, lang } =
+  site.giscus;
+
+const enabled = Boolean(repoId && categoryId);
+---
+
+{
+  enabled && (
+    <div class="giscus-comments">
+      <script
+        is:inline
+        src="https://giscus.app/client.js"
+        data-repo={repo}
+        data-repo-id={repoId}
+        data-category={category}
+        data-category-id={categoryId}
+        data-mapping={mapping}
+        data-strict="0"
+        data-reactions-enabled={reactionsEnabled}
+        data-emit-metadata="0"
+        data-input-position={inputPosition}
+        data-theme="preferred_color_scheme"
+        data-lang={lang}
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async
+      />
+    </div>
+  )
+}

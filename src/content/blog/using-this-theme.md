@@ -22,8 +22,8 @@ EJS partials map onto Astro components:
 ## Configuration
 
 Site-wide options live in `src/config.ts`: title, subtitle, description,
-author, menu, and the Disqus / Google Analytics IDs (empty by default, so both
-integrations are **off** until you fill them in).
+author, menu, and the giscus / Google Analytics settings (empty by default, so
+both integrations are **off** until you fill them in).
 
 ## Content
 

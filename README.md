@@ -34,6 +34,8 @@ src/
 │   ├── Header.astro       # index header
 │   ├── Menu.astro         # optional nav bar from site.menu
 │   ├── PostCard.astro     # post excerpt card
+│   ├── TtsPlayer.astro    # read-aloud player (post pages)
+│   ├── Giscus.astro       # giscus comments (post pages)
 │   └── Footer.astro
 ├── pages/
 │   ├── index.astro        # post list
@@ -91,10 +93,18 @@ Edit `src/config.ts`:
 | `url` | Absolute site URL if you don't set `site` in `astro.config.mjs` |
 | `menu` | Links rendered by `<Menu />` |
 | `excerptLink` | Label for the "read more" link on `PostCard` |
-| `disqusShortname` | Disqus shortname — **empty disables comments** |
+| `giscus` | Comments (GitHub Discussions): `repo`, `repoId`, `categoryId`… — **empty IDs disable comments** |
 | `googleAnalytics` | GA measurement ID — **empty disables analytics** |
 
 Also update `site` in `astro.config.mjs` to your production URL.
+
+## Comments (giscus)
+
+Post pages show giscus comments, backed by GitHub Discussions. To enable:
+turn on Discussions for the repo, install the
+[giscus app](https://github.com/apps/giscus), then copy `repoId` and
+`categoryId` from [giscus.app](https://giscus.app) into `giscus` in
+`src/config.ts`. Comments stay hidden until both IDs are set.
 
 ## Text-to-speech (TTS)
 
@@ -125,8 +135,9 @@ when `TTS_API_TOKEN` is present.
 
 ## Differences from the Hexo original
 
-- **Comments & analytics are off by default.** Set `disqusShortname` /
-  `googleAnalytics` in `src/config.ts` to enable them.
+- **Comments & analytics are off by default.** Analytics uses
+  `googleAnalytics`; comments use giscus (`giscus` in `src/config.ts`) — fill in
+  `repoId` / `categoryId` from [giscus.app](https://giscus.app) to enable them.
 - The feed is served at `/rss.xml` instead of `/atom.xml`. It stays disabled
   (404) until a site URL is set in `astro.config.mjs`.
 - `Menu` and `PostCard` are provided as opt-in components; the original theme

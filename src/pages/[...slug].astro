@@ -6,6 +6,7 @@ import Header from '../components/Header.astro';
 import { site } from '../config';
 import { formatDate } from '../utils/date';
 import TtsPlayer from '../components/TtsPlayer.astro';
+import Giscus from '../components/Giscus.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -42,30 +43,6 @@ const description = post.data.description ?? site.description;
 
     <hr />
 
-    {
-      site.disqusShortname && (
-        <div id="disqus_thread">Using disqus as comment system</div>
-      )
-    }
+    <Giscus />
   </div>
-
-  {
-    site.disqusShortname && (
-      <script
-        is:inline
-        define:vars={{ shortname: site.disqusShortname, url: Astro.url.href }}
-      >
-        var disqus_shortname = shortname;
-        var disqus_url = url;
-        (function () {
-          var dsq = document.createElement('script');
-          dsq.type = 'text/javascript';
-          dsq.async = true;
-          dsq.src = '//' + shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] ||
-            document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-    )
-  }
 </BaseLayout>

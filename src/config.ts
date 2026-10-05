@@ -24,8 +24,28 @@ export interface SiteConfig {
   menu: Record<string, string>;
   /** Label for the "read more" link on excerpt cards. */
   excerptLink: string;
-  /** Disqus shortname. Leave empty to disable comments. */
-  disqusShortname: string;
+  /**
+   * giscus comments (backed by GitHub Discussions). Leave `repoId` /
+   * `categoryId` empty to disable comments.
+   */
+  giscus: {
+    /** GitHub repo that stores the discussions, e.g. `owner/name`. */
+    repo: string;
+    /** Repo ID from giscus.app (`R_kgDO...`). */
+    repoId: string;
+    /** Discussion category name. */
+    category: string;
+    /** Category ID from giscus.app (`DIC_kwDO...`). */
+    categoryId: string;
+    /** How a page maps to a discussion thread (e.g. `pathname`, `url`, `title`). */
+    mapping: string;
+    /** `1` to show reactions, `0` to hide. */
+    reactionsEnabled: string;
+    /** Where the comment box appears: `top` or `bottom`. */
+    inputPosition: string;
+    /** giscus UI language. */
+    lang: string;
+  };
   /** Google Analytics measurement ID (e.g. `G-XXXXXXX`). Leave empty to disable. */
   googleAnalytics: string;
 }
@@ -43,6 +63,18 @@ export const site: SiteConfig = {
   },
   excerptLink: 'Read More',
   // Integrations are opt-in. Fill these in to enable them.
-  disqusShortname: '',
   googleAnalytics: '',
+  // Comments via giscus (GitHub Discussions). Enable Discussions on the repo,
+  // install https://github.com/apps/giscus, then copy the repo/category IDs
+  // from https://giscus.app into repoId / categoryId below.
+  giscus: {
+    repo: 'myogg/astro-t9tio',
+    repoId: 'R_kgDOU7bj7Q',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOU7bj7c4DHFpl',
+    mapping: 'pathname',
+    reactionsEnabled: '1',
+    inputPosition: 'bottom',
+    lang: 'zh-CN',
+  },
 };
