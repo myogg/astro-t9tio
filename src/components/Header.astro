@@ -7,17 +7,16 @@ import { site } from '../config';
   <nav
     style="border-bottom: 1px solid rgba(0,0,0,.1); position:fixed; top:0; width:100%; background-color: white; z-index: 10"
   >
-    <div class="container post-container">
-      <div style="float:left">
-        <a class="button is-white" href="/" style="padding: 23px 5px 23px 5px">
-          <img src="/favicon/favicon.ico" width="28" height="28" alt="logo" />
-        </a>
-      </div>
-      <div style="float:right">
-        <a class="button is-white" href="/" style="padding: 23px 5px 23px 5px">
-          <strong style="color: #555">Blogs</strong>
-        </a>
-      </div>
+    <div
+      class="container post-container"
+      style="display:flex; align-items:center; justify-content:space-between;"
+    >
+      <a class="button is-white" href="/" style="padding: 18px 5px">
+        <img src="/images/jreey-logo.webp" width="68" height="57" alt="Jreey" />
+      </a>
+      <a class="button is-white" href="/" style="padding: 18px 5px">
+        <strong style="color: #555">Blogs</strong>
+      </a>
     </div>
   </nav>
   {site.subtitle && <p class="lead blog-description">{site.subtitle}</p>}

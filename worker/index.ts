@@ -25,7 +25,7 @@ async function handleTts(request: Request, env: Env): Promise<Response> {
 	const url = new URL(request.url);
 
 	const text = url.searchParams.get('text');
-	const voiceName = url.searchParams.get('voiceName') || 'zh-CN-XiaoxiaoNeural';
+	const voiceName = url.searchParams.get('voiceName') || 'zh-CN-YunjianNeural';
 
 	if (!text) {
 		return new Response('Missing text parameter', { status: 400 });
