@@ -24,7 +24,7 @@ const description = post.data.description ?? site.description;
 <BaseLayout title={post.data.title} description={description}>
   <Header />
 
-  <div class="section container post-container">
+  <div class="section container post-container post-page">
     <header class="post-header">
       <p class="post-meta">{formatDate(post.data.date)}</p>
       <h1 class="post-title">{post.data.title}</h1>

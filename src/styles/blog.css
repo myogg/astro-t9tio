@@ -8,10 +8,18 @@ ul {
   max-width: 750px;
 }
 
+/* Article page column — narrower than the site-wide .post-container
+   (which the header nav also uses) for a comfortable reading measure. */
+.post-page {
+  max-width: 680px;
+}
+
 /* post header — centered, OpenAI-blog-style */
 .post-header {
   padding-top: 50px;
   text-align: center;
+  font-family: "OpenAI Sans", Söhne, Inter, system-ui, -apple-system, "Segoe UI",
+    "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 .post-meta {
@@ -27,11 +35,11 @@ ul {
 }
 
 .post-title {
-  margin: 24px 0 0;
-  font-size: clamp(28px, 5vw, 40px);
-  font-weight: 700;
+  margin: 64px 0 0;
+  font-size: clamp(30px, 5.5vw, 42px);
+  font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   color: #1a1a1a;
 }
 
@@ -45,7 +53,7 @@ ul {
 
 .post-actions {
   margin-top: 36px;
-  padding: 18px 0 22px;
+  padding: 20px 0 40px;
   border-top: 1px solid #e6e8eb;
 }
 
@@ -104,9 +112,10 @@ ul {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   color: #24292e;
-  line-height: 1.85;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-size: 19px;
+  line-height: 1.8;
+  font-family: "OpenAI Sans", Söhne, Inter, system-ui, -apple-system, "Segoe UI",
+    "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
   word-wrap: break-word;
 }
 
@@ -268,7 +277,8 @@ ul {
 .markdown-body code,
 .markdown-body kbd,
 .markdown-body pre {
-  font-family: monospace,monospace;
+  font-family: "Söhne Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+    monospace;
   font-size: 1em;
 }
 
@@ -586,7 +596,15 @@ ul {
 .markdown-body blockquote {
   border-left: .25em solid #dfe2e5;
   color: #6a737d;
+  font-size: 14px;
   padding: 0 1em;
+}
+
+.markdown-body figcaption {
+  color: #6a737d;
+  font-size: 13px;
+  margin-top: 8px;
+  text-align: center;
 }
 
 .markdown-body blockquote>:first-child {
