@@ -24,16 +24,14 @@ const description = post.data.description ?? site.description;
 <BaseLayout title={post.data.title} description={description}>
   <Header />
 
-  <div class="section container post-container" style="margin-top: 50px">
-    <h2 class="title">{post.data.title}</h2>
+  <div class="section container post-container">
+    <header class="post-header">
+      <p class="post-meta">{formatDate(post.data.date)}</p>
+      <h1 class="post-title">{post.data.title}</h1>
+      {post.data.description && <p class="post-summary">{post.data.description}</p>}
+    </header>
 
-    <div
-      style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding-top:5px; margin-bottom:22px;"
-    >
-      <p class="subtitle is-7 has-text-grey" style="margin:0;">
-        {formatDate(post.data.date)}
-        {!post.data.author && <>by <a href={site.authorUrl}>{site.author}</a></>}
-      </p>
+    <div class="post-actions">
       <TtsPlayer />
     </div>
 
