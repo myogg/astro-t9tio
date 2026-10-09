@@ -1,6 +1,6 @@
 ---
 title: "甘肃张掖市的马蹄寺"
-date: 2024-09-05
+date: 2024-09-05 08:00
 ---
 ![](https://pic.superbed.cc/item/66d9afc5fcada11d378a3b35.webp)
 

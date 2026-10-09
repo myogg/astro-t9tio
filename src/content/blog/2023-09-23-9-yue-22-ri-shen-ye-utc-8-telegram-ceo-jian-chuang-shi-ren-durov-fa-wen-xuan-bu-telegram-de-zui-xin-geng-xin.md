@@ -1,6 +1,6 @@
 ---
 title: "9月22日深夜(UTC+8)，Telegram CEO兼创始人Durov发文宣布Telegram的最新更新"
-date: 2023-09-23
+date: 2023-09-23 08:00
 tags: ["Telegram", "CEO", "Durov"]
 ---
 ![](https://pic.imgdb.cn/item/650ee08ec458853aef227983.jpg)

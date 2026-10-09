@@ -1,6 +1,6 @@
 ---
 title: "PS Portal 港台发售定档"
-date: 2024-07-19
+date: 2024-07-19 08:00
 author: "mymsnn"
 tags: ["PlayStation Portal"]
 ---

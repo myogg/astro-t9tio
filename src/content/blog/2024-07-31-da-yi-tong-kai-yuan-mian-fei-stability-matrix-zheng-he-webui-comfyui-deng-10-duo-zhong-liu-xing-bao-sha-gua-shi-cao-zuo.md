@@ -1,6 +1,6 @@
 ---
 title: "大一统+开源免费！Stability Matrix整合WebUI+ComfyUI等10多种流行包，傻瓜式操作"
-date: 2024-07-31
+date: 2024-07-31 08:00
 author: "mymsnn"
 tags: ["Matrix", "Stability"]
 ---

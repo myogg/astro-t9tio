@@ -1,6 +1,6 @@
 ---
 title: "泄密者 Apple Silicon iMac Pro 将于 2022 年初推出"
-date: 2021-10-31
+date: 2021-10-31 08:00
 tags: ["Apple"]
 ---
 一位泄密者称，苹果的下一款 iMac 可能是2022 年上半年到货的iMac Pro，它可以搭载 M1 Pro 或 M1 Max，并且有可能在显示屏上安装 Face ID.

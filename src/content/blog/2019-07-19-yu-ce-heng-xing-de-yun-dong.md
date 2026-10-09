@@ -1,6 +1,6 @@
 ---
 title: "预测恒星的运动"
-date: 2019-07-19
+date: 2019-07-19 08:00
 tags: ["Holmerg", "NASA", "Anglo"]
 ---
 ![20190719101914402.jpg](https://i.loli.net/2019/07/19/5d31e461afae461645.jpg)

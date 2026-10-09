@@ -1,6 +1,6 @@
 ---
 title: "在Github上写博客？最简单的方法！"
-date: 2024-07-29
+date: 2024-07-29 08:02
 author: "mymsnn"
 tags: ["blog"]
 ---

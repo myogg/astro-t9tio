@@ -1,6 +1,6 @@
 ---
 title: "Blue Ghostr成功登陆月球表面"
-date: 2025-03-03
+date: 2025-03-03 08:00
 tags: ["Blue", "moon"]
 ---
 ![](https://pic.superbed.cc/item/67c5977af688033adbcdc406.jpg)

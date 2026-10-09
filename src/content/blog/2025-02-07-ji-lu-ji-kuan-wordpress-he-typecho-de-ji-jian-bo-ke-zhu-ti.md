@@ -1,6 +1,6 @@
 ---
 title: "记录几款 WordPress 和 Typecho 的极简博客主题"
-date: 2025-02-07
+date: 2025-02-07 08:01
 tags: ["WordPress", "Typecho"]
 ---
 作者地址：

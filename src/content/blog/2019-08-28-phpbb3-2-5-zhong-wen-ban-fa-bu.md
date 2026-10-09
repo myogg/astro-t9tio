@@ -1,6 +1,6 @@
 ---
 title: "phpBB3.2.5 中文版发布"
-date: 2019-08-28
+date: 2019-08-28 08:00
 tags: ["phpBB", "phpBBchina.com"]
 ---
 欢迎使用phpBB论坛系统！

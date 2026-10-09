@@ -1,6 +1,6 @@
 ---
 title: "Discover Open Source Alternatives to Popular Software"
-date: 2024-07-26
+date: 2024-07-26 08:00
 author: "mymsnn"
 tags: ["Software"]
 ---

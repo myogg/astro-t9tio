@@ -1,6 +1,6 @@
 ---
 title: "墨西哥是一个面积很大的国家"
-date: 2024-08-18
+date: 2024-08-18 08:00
 author: "mymsnn"
 tags: ["blog"]
 ---

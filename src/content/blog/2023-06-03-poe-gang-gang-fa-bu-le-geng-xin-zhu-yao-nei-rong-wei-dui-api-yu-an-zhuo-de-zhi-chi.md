@@ -1,6 +1,6 @@
 ---
 title: "POE 刚刚发布了更新，主要内容为对API与安卓的支持"
-date: 2023-06-03
+date: 2023-06-03 08:00
 ---
 1. Poe发布了 Android 应用程序，该应用程序可以实现所有平台的实时聊天同步，包括 iOS、Android 和 Web
 ![](https://pic.imgdb.cn/item/647b4170f024cca173362dcc.jpg)

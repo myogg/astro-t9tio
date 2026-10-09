@@ -1,6 +1,6 @@
 ---
 title: "三个开源的 Android 邮件客户端"
-date: 2024-10-23
+date: 2024-10-23 08:00
 tags: ["android"]
 ---
 三个开源的 Andorid 邮件客户端供选择。其中两个可以通过 Andorid 官方应用商店 Google Play 下载。你也可以在 Fossdroid 或者 F-Droid 这些开源 Android 应用库中找到他们。（下方有每个应用的具体下载方式。）

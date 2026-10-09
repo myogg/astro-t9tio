@@ -1,6 +1,6 @@
 ---
 title: "Jekyll Github Pages push报错"
-date: 2024-10-21
+date: 2024-10-21 08:01
 description: "发现markdown格式下的代码块不能有花括号"
 tags: ["ai", "2024"]
 ---

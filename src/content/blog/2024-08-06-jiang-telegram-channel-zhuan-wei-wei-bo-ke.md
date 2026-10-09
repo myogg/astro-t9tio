@@ -1,6 +1,6 @@
 ---
 title: "将 Telegram Channel 转为微博客"
-date: 2024-08-06
+date: 2024-08-06 08:01
 author: "mymsnn"
 tags: ["Telegram"]
 ---

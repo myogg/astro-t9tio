@@ -1,6 +1,6 @@
 ---
 title: "光盘时代落幕"
-date: 2024-08-06
+date: 2024-08-06 08:00
 author: "mymsnn"
 tags: ["SuperDrive"]
 ---

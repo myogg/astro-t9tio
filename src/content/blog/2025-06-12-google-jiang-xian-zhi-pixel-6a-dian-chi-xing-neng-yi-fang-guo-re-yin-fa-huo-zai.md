@@ -1,6 +1,6 @@
 ---
 title: "Google将限制Pixel 6a电池性能 以防过热引发火灾"
-date: 2025-06-12
+date: 2025-06-12 08:00
 tags: ["Google", "Pixel", "smartphone"]
 ---
 ![](https://pic.imgdd.cc/item/684ad1413c3a6234d3484180.jpg)

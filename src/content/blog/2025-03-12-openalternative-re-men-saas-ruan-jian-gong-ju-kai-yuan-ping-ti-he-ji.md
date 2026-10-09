@@ -1,6 +1,6 @@
 ---
 title: "⚙️ OpenAlternative：热门 SaaS 软件工具「开源平替」合集"
-date: 2025-03-12
+date: 2025-03-12 08:00
 ---
 ![OpenAlternative](https://pic.superbed.cc/item/67d05fe6f688033adbb514da.jpg)
 

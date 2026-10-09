@@ -1,6 +1,6 @@
 ---
 title: "重新编排 (Retypeset)"
-date: 2025-04-11
+date: 2025-04-11 08:00
 description: "一个极简博客，以活版印字为设计灵感"
 ---
 [重新编排](https://astro-theme-typography.vercel.app/)，英文名叫 Retypeset，是一个我看到首页就被吸引的极简博客。

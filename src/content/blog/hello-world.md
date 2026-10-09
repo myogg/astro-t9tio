@@ -1,6 +1,6 @@
 ---
 title: Hello World
-date: 2020-01-01
+date: 2020-01-01 08:00
 description: A first sample post that shows off the theme's markdown styling.
 tags:
   - demo

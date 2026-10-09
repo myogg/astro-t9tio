@@ -1,6 +1,6 @@
 ---
 title: "预订您的 Cloudflare 钱包"
-date: 2026-08-04
+date: 2026-08-04 08:01
 description: "Cloudflare 推出全新支付产品 Cloudflare Pay，现已开放预订。"
 tags: ["Cloudflare", "支付", "产品"]
 ---

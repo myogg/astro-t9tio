@@ -1,6 +1,6 @@
 ---
 title: "MIDI 文件可视化工具"
-date: 2024-08-17
+date: 2024-08-17 08:00
 author: "mymsnn"
 tags: ["3d"]
 ---

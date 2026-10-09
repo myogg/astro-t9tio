@@ -1,6 +1,6 @@
 ---
 title: "自建 TTS 服务，两道门就够了"
-date: 2026-10-02
+date: 2026-10-02 08:00
 description: "用微软 Edge 的「大声朗读」接口在 Cloudflare Workers 上搭了个转发器，加了两道门：Origin 白名单和 TOKEN。防君子不防小人，够用就行。"
 tags: ["Cloudflare Workers", "TTS", "安全"]
 ---

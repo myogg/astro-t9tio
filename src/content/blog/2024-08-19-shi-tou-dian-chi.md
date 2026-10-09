@@ -1,6 +1,6 @@
 ---
 title: "石头电池"
-date: 2024-08-19
+date: 2024-08-19 08:00
 author: "mymsnn"
 tags: ["技术"]
 ---

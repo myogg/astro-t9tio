@@ -1,6 +1,6 @@
 ---
 title: "OpenAI 推出 ChatGPT 锁定模式和风险标签功能"
-date: 2026-04-10
+date: 2026-04-10 08:12
 description: "OpenAI为ChatGPT引入锁定模式和风险标签两项安全功能，以应对日益严重的提示注入攻击风险。"
 ---
 

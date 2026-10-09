@@ -1,6 +1,6 @@
 ---
 title: "超声波冬眠"
-date: 2024-08-21
+date: 2024-08-21 08:00
 author: "mymsnn"
 tags: ["冬眠"]
 ---

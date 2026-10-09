@@ -1,6 +1,6 @@
 ---
 title: "Llama Coder"
-date: 2024-10-21
+date: 2024-10-21 08:03
 description: "目前用于生产环境貌似不太现实，但是可以快速将你的创意转换为 Demo"
 tags: ["ai", "2024"]
 ---

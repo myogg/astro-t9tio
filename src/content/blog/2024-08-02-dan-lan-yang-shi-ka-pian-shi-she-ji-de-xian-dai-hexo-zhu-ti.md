@@ -1,6 +1,6 @@
 ---
 title: "单栏样式 & 卡片式设计 的现代 Hexo 主题"
-date: 2024-08-02
+date: 2024-08-02 08:00
 author: "mymsnn"
 tags: ["Hexo"]
 ---

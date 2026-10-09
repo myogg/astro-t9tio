@@ -1,6 +1,6 @@
 ---
 title: "承认平庸"
-date: 2024-09-30
+date: 2024-09-30 08:00
 author: "mymsnn"
 tags: ["blog"]
 ---

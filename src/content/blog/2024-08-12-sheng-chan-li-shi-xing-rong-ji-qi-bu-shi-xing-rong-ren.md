@@ -1,6 +1,6 @@
 ---
 title: "生产力是形容机器，不是形容人"
-date: 2024-08-12
+date: 2024-08-12 08:00
 author: "mymsnn"
 tags: ["37signals"]
 ---

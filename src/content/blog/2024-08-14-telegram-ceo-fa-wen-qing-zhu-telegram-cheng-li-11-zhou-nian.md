@@ -1,6 +1,6 @@
 ---
 title: "Telegram CEO发文庆祝Telegram成立11周年"
-date: 2024-08-14
+date: 2024-08-14 08:00
 author: "mymsnn"
 tags: ["Telegram"]
 ---

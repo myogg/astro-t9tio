@@ -1,6 +1,6 @@
 ---
 title: "全息动物园"
-date: 2024-08-25
+date: 2024-08-25 08:00
 author: "mymsnn"
 tags: ["3D"]
 ---

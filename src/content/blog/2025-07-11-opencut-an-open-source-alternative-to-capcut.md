@@ -1,6 +1,6 @@
 ---
 title: "OpenCut - An Open-Source Alternative to CapCut"
-date: 2025-07-11
+date: 2025-07-11 08:00
 ---
 Because the international version of **Jianying** (剪映), **CapCut**, charges for nearly every feature, one frustrated user directly developed an open-source, multi-platform **video editing** software that runs in **Docker** - **OpenCut**.
 

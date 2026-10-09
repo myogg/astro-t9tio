@@ -1,6 +1,6 @@
 ---
 title: Using This Theme
-date: 2020-02-15
+date: 2020-02-15 08:00
 description: How the Hexo theme maps onto this Astro project, and where to customise things.
 tags:
   - docs

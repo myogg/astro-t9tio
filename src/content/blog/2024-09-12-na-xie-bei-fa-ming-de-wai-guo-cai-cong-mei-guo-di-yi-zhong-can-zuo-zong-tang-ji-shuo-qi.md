@@ -1,6 +1,6 @@
 ---
 title: "那些被发明的“外国菜”：从美国“第一中餐”左宗棠鸡说起"
-date: 2024-09-12
+date: 2024-09-12 08:00
 tags: ["BBC", "左宗棠", "BBC Future"]
 ---
 ![](https://img.imgdb.cn/item/603261cf5f4313ce252c0d27.jpg)

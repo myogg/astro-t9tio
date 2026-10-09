@@ -1,6 +1,6 @@
 ---
 title: "webcam motion capture"
-date: 2024-05-18
+date: 2024-05-18 08:00
 author: "mymsnn"
 ---
 ![](https://pic.imgdb.cn/item/66a8eef6d9c307b7e9400ccf.jpg)

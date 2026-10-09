@@ -1,6 +1,6 @@
 ---
 title: "Picture of a diver surrounded by hundreds of fish"
-date: 2025-12-10
+date: 2025-12-10 08:00
 tags: ["Telegram", "通行密钥", "Passkeys", "登录安全"]
 ---
 ## 通行密钥：Telegram 推出的安全登录新标准

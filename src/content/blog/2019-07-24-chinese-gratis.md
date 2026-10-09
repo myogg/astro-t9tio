@@ -1,6 +1,6 @@
 ---
 title: "chinese.gratis"
-date: 2019-07-24
+date: 2019-07-24 08:00
 tags: ["chinese", "gratis"]
 ---
 这个网站要记录一下。

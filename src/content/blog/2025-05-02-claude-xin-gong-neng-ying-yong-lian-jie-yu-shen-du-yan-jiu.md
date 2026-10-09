@@ -1,6 +1,6 @@
 ---
 title: "Claude 新功能：应用连接与深度研究"
-date: 2025-05-02
+date: 2025-05-02 08:00
 ---
 Anthropic 为其 AI 聊天机器人 Claude 推出了新功能，包括应用连接（Integrations）和深度研究（Advanced Research）能力。  
 这些功能首先面向订阅用户开放，旨在提升 Claude 的实用性。

@@ -1,6 +1,6 @@
 ---
 title: "Claude 现已支持简体中文与繁体中文界面"
-date: 2026-10-06
+date: 2026-10-06 08:00
 tags: ["Claude", "Anthropic", "中文支持", "产品更新"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Vercel 一键部署 Hexo 博客的主题更换指南"
-date: 2025-03-25
+date: 2025-03-25 08:00
 author: "技术文档"
 tags: ["Hexo", "Vercel", "静态网站"]
 ---

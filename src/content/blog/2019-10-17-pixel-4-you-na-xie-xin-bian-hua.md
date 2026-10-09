@@ -1,6 +1,6 @@
 ---
 title: "Pixel 4 有哪些新变化？"
-date: 2019-10-17
+date: 2019-10-17 08:00
 ---
 当地时间 10 月 15 日，Google 在纽约正式召开硬件发布会，早前在网络上已被完全曝光的 Pixel 4、Pixelbook Go、Nest Mini、Nest Wifi 和 Pixel Buds 2 悉数亮相
 

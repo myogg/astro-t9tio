@@ -1,6 +1,6 @@
 ---
 title: "使用 Zola 和 GitHub Pages 构建博客"
-date: 2025-01-22
+date: 2025-01-22 08:00
 tags: ["zola"]
 ---
 使用 Zola 和 GitHub Pages 构建博客是一个高效且简洁的方式。Zola 是一个静态网站生成器，而 GitHub Pages 是一个免费的静态网站托管服务。以下是详细的步骤，帮助你从零开始构建并部署你的博客。

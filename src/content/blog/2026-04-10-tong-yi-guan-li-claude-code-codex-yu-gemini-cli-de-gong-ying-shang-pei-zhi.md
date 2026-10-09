@@ -1,6 +1,6 @@
 ---
 title: "统一管理 Claude Code、Codex 与 Gemini CLI 的供应商配置"
-date: 2026-04-10
+date: 2026-04-10 08:19
 ---
 大概看了一下，意思就是所有的额度都能用到claude
 <!-- more -->

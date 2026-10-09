@@ -1,6 +1,6 @@
 ---
 title: "让鱼过得快乐一些"
-date: 2024-09-08
+date: 2024-09-08 08:00
 author: "mymsnn"
 tags: ["blog"]
 ---
