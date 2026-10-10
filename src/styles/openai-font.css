@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* 中文走CDN，已经切好了 */
+@import url('https://cdn.jsdelivr.net/npm/oppo-sans@1.0.0/dist/oppo-sans.css');
+
+:root {
+  --font-sans: "Inter", "OPPO Sans", system-ui, sans-serif;
+}
