@@ -1,4 +1,4 @@
-/* ===== 中文：标题用 Noto 方黑，正文用 OPPO =====
+/* ===== 中文：标题用 Noto 方黑，正文用 OPPO（首页）/ Noto Serif SC（文章页） =====
    The @font-face rules for these two families are loaded via <link> in
    BaseLayout's <head> so the browser discovers them earlier (no flash). */
 
@@ -28,6 +28,7 @@
 :root {
   --font-sans: "Inter", "OPPO Sans", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
   --font-display: "Inter", "Noto Sans SC", "OPPO Sans", "PingFang SC", sans-serif;
+  --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
 }
 
 body {
@@ -47,6 +48,18 @@ p, li, blockquote {
   font-family: var(--font-sans);
   font-weight: 400;
   letter-spacing: -0.01em;
+}
+
+/* ===== 文章页正文改用思源宋体 ===== */
+.post-page .markdown-body,
+.post-page .markdown-body p,
+.post-page .markdown-body li,
+.post-page .markdown-body blockquote,
+.post-page .post-summary {
+  font-family: var(--font-serif) !important;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.75;
 }
 
 /* ===== 手机端：仅文章页内容字号放大，对齐 OpenAI（不影响主页） ===== */
