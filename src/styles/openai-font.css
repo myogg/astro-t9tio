@@ -1,20 +1,68 @@
+/* ========== 英文 Inter 你本地的2个文件 ========== */
 @font-face {
   font-family: 'Inter';
   src: url('/fonts/inter-regular.woff2') format('woff2');
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: 'Inter';
   src: url('/fonts/inter-medium.woff2') format('woff2');
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* 600 700 800 都用500去冒充，解决标题不够黑的问题 */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-medium.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-medium.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-medium.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
   font-display: swap;
 }
 
-/* 中文走CDN，已经切好了 */
+/* ========== 中文标题用 Noto Sans SC 方黑，最接近 OpenAI ========== */
+@import url('https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@400;700;800;900&display=swap');
+/* 正文用 OPPO Sans，柔和好读 */
 @import url('https://cdn.jsdelivr.net/npm/oppo-sans@1.0.0/dist/oppo-sans.css');
 
 :root {
-  --font-sans: "Inter", "OPPO Sans", system-ui, sans-serif;
+  --font-sans: "Inter", "OPPO Sans", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-display: "Inter", "Noto Sans SC", "OPPO Sans", "PingFang SC", sans-serif;
+}
+
+/* 全站默认 */
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 标题：这3行就是和你截图左边 OpenAI 一模一样的关键 */
+h1, h2, h3, .prose h1, .prose h2 {
+  font-family: var(--font-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.15 !important;
+}
+
+/* 正文和英文 */
+p, li, blockquote {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
