@@ -50,16 +50,17 @@ p, li, blockquote {
   letter-spacing: -0.01em;
 }
 
-/* ===== 文章页正文改用思源宋体 ===== */
+/* ===== 文章页正文改用思源宋体（字重 500，更黑） ===== */
 .post-page .markdown-body,
 .post-page .markdown-body p,
 .post-page .markdown-body li,
 .post-page .markdown-body blockquote,
 .post-page .post-summary {
   font-family: var(--font-serif) !important;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0;
   line-height: 1.75;
+  color: #1a1a1a;
 }
 
 /* ===== 手机端：仅文章页内容字号放大，对齐 OpenAI（不影响主页） ===== */
