@@ -1,29 +1,29 @@
+/* ===== 中文：标题用 Noto 方黑，正文用 OPPO ===== */
+@import url('https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@800;900&display=swap&v=2');
+@import url('https://cdn.jsdelivr.net/npm/oppo-sans@1.0.0/dist/oppo-sans.css?v=2');
+
 /* ===== 英文 Inter 你本地的2个文件 ===== */
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/inter-regular.woff2') format('woff2');
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/inter-medium.woff2') format('woff2');
+  src: url('/fonts/Inter-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/inter-medium.woff2') format('woff2');
+  src: url('/fonts/Inter-Medium.woff2') format('woff2');
   font-weight: 600 900;
   font-style: normal;
   font-display: swap;
 }
-
-/* ===== 中文：标题用 Noto 方黑，正文用 OPPO ===== */
-@import url('https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@800;900&display=swap&v=2');
-@import url('https://cdn.jsdelivr.net/npm/oppo-sans@1.0.0/dist/oppo-sans.css?v=2');
 
 :root {
   --font-sans: "Inter", "OPPO Sans", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
