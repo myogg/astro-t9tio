@@ -35,6 +35,38 @@ const {
     <link rel="bookmark" href="/favicon/favicon.ico" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
 
+    <!-- Fonts: connect early and warm the cache to avoid a swap flash.
+         The CJK webfonts are dynamically subsetted (unicode-range), so we
+         preconnect to their origins instead of preloading individual files. -->
+    <link rel="preconnect" href="https://fonts.loli.net" crossorigin />
+    <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@800;900&display=swap&v=2"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/oppo-sans@1.0.0/dist/oppo-sans.css?v=2"
+    />
+
+    <!-- Local Latin font used first by both font stacks — preload it. -->
+    <link
+      rel="preload"
+      href="/fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Inter-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <slot name="head" />
   </head>
 

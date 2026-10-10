@@ -1,6 +1,6 @@
-/* ===== 中文：标题用 Noto 方黑，正文用 OPPO ===== */
-@import url('https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@800;900&display=swap&v=2');
-@import url('https://cdn.jsdelivr.net/npm/oppo-sans@1.0.0/dist/oppo-sans.css?v=2');
+/* ===== 中文：标题用 Noto 方黑，正文用 OPPO =====
+   The @font-face rules for these two families are loaded via <link> in
+   BaseLayout's <head> so the browser discovers them earlier (no flash). */
 
 /* ===== 英文 Inter 你本地的2个文件 ===== */
 @font-face {
@@ -35,8 +35,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* 像 OpenAI 一样的超黑紧凑标题 */
-h1, h2, h3, .prose h1, .prose h2 {
+/* 像 OpenAI 一样的超黑紧凑标题 —— 仅文章页，避免主页标题过黑 */
+.post-page h1, .post-page h2, .post-page h3 {
   font-family: var(--font-display) !important;
   font-weight: 800 !important;
   letter-spacing: -0.04em !important;
