@@ -25,14 +25,15 @@ async function handleTts(request: Request, env: Env): Promise<Response> {
 	const url = new URL(request.url);
 
 	const text = url.searchParams.get('text');
-	const voiceName = url.searchParams.get('voiceName') || 'zh-CN-YunjianNeural';
+	const voiceName = url.searchParams.get('voiceName') || 'zh-CN-XiaoxiaoNeural';
+	const pitch = url.searchParams.get('pitch') || '-20%';
 
 	if (!text) {
 		return new Response('Missing text parameter', { status: 400 });
 	}
 
 	const api = (env.TTS_API_URL || DEFAULT_TTS_API).replace(/\/+$/, '');
-	const params = new URLSearchParams({ text, voiceName });
+	const params = new URLSearchParams({ text, voiceName, pitch });
 
 	if (env.TTS_API_TOKEN) {
 		params.set('token', env.TTS_API_TOKEN);
