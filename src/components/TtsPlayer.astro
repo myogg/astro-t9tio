@@ -155,6 +155,8 @@
     var TTS_ENDPOINT = '/api/tts';
     var VOICE = 'zh-CN-XiaoxiaoNeural';
     var PITCH = '-20%';
+    var TTS_RATE = '5%';
+    var TTS_FORMAT = 'audio-24khz-48kbitrate-mono-mp3';
     var SPEEDS = [1, 1.25, 1.5, 1.75, 2];
     var SKIP = 15;
     // 合成前拿不到真实音频长度，按中文语速估算总时长
@@ -251,7 +253,7 @@
 
     function getBlob(i) {
       if (blobs[i]) return Promise.resolve(blobs[i]);
-      var params = new URLSearchParams({ text: chunks[i], voiceName: VOICE, pitch: PITCH });
+      var params = new URLSearchParams({ text: chunks[i], voiceName: VOICE, pitch: PITCH, rate: TTS_RATE, format: TTS_FORMAT });
       return fetch(TTS_ENDPOINT + '?' + params, {
         signal: abortController.signal,
       }).then(function (res) {
