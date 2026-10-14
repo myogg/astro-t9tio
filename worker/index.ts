@@ -27,13 +27,15 @@ async function handleTts(request: Request, env: Env): Promise<Response> {
 	const text = url.searchParams.get('text');
 	const voiceName = url.searchParams.get('voiceName') || 'zh-CN-XiaoxiaoNeural';
 	const pitch = url.searchParams.get('pitch') || '-20%';
+	const rate = url.searchParams.get('rate') || '5%';
+	const format = url.searchParams.get('format') || 'audio-24khz-48kbitrate-mono-mp3';
 
 	if (!text) {
 		return new Response('Missing text parameter', { status: 400 });
 	}
 
 	const api = (env.TTS_API_URL || DEFAULT_TTS_API).replace(/\/+$/, '');
-	const params = new URLSearchParams({ text, voiceName, pitch });
+	const params = new URLSearchParams({ text, voiceName, pitch, rate, format });
 
 	if (env.TTS_API_TOKEN) {
 		params.set('token', env.TTS_API_TOKEN);
