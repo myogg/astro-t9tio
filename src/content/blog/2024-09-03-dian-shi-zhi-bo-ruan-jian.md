@@ -1,7 +1,7 @@
 ---
 title: "电视直播软件"
 date: 2024-09-03 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["blog"]
 ---
 https://github.com/andandroidor/ourtv

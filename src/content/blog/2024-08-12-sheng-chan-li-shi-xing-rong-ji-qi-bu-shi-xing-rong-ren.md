@@ -1,7 +1,7 @@
 ---
 title: "生产力是形容机器，不是形容人"
 date: 2024-08-12 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["37signals"]
 ---
 &emsp;&emsp;贾森·弗里德（Jason Fried）和戴维·汉森（David Heinemeier Hansson），是互联网公司 37signals 的主要创始人。他们除了写程序，就喜欢写书。

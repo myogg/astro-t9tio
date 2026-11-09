@@ -1,7 +1,7 @@
 ---
 title: "Telegram CEO发文庆祝Telegram成立11周年"
 date: 2024-08-14 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["Telegram"]
 ---
 ![](https://pic.imgdb.cn/item/66bca512d9c307b7e9dbc14c.jpg)

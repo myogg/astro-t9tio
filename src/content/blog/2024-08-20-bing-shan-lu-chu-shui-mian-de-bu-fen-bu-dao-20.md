@@ -1,7 +1,7 @@
 ---
 title: "冰山露出水面的部分不到20%"
 date: 2024-08-20 08:01
-author: "mymsnn"
+author: "姜一一"
 tags: ["blog"]
 ---
 ![](https://pic.imgdb.cn/item/66c490dcd9c307b7e9c85287.webp)

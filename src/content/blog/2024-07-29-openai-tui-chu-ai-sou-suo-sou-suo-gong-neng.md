@@ -1,7 +1,7 @@
 ---
 title: "OpenAI 推出 AI 搜索搜索功能"
 date: 2024-07-29 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["OpenAI", "Meta"]
 ---
 OpenAI 推出 AI 搜索搜索功能「SearchGPT」：这是一款由 GPT-4 系列模型驱动、能实时访问全网信息，附带清晰来源链接的搜索引擎

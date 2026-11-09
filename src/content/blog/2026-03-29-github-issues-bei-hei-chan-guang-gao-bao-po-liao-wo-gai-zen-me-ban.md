@@ -1,7 +1,7 @@
 ---
 title: "GitHub Issues 被黑产广告“爆破”了，我该怎么办？"
 date: 2026-03-29 08:00
-author: "YourName"
+author: "姜一一"
 tags: ["github", "issues", "黑产", "安全"]
 ---
 最近几天，技术圈里不太平。

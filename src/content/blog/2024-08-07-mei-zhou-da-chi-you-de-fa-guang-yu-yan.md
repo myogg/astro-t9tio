@@ -1,7 +1,7 @@
 ---
 title: "美洲大赤鱿的发光语言"
 date: 2024-08-07 08:02
-author: "mymsnn"
+author: "姜一一"
 tags: ["赤鱿"]
 ---
 美洲大赤鱿（Dosidicus gigas）是一种生活在深海的大型鱿鱼，体内含有荧光素，所以会发光。

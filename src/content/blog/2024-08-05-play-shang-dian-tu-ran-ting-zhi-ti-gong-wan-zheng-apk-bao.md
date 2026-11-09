@@ -1,7 +1,7 @@
 ---
 title: "Play 商店突然停止提供完整 APK 包"
 date: 2024-08-05 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["Play"]
 ---
 根据 APK 提供网站 APKMirrors 的最新消息，谷歌 Play 商店已突然停止提供完整安卓应用 APK 包，将影响一些应用的侧载安装。

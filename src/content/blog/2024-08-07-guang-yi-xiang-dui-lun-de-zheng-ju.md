@@ -1,7 +1,7 @@
 ---
 title: "广义相对论的证据"
 date: 2024-08-07 08:01
-author: "mymsnn"
+author: "姜一一"
 tags: ["相对论"]
 ---
 ![](https://pic.imgdb.cn/item/66b36b6ad9c307b7e93ba857.jpg)

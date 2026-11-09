@@ -1,7 +1,7 @@
 ---
 title: "Underwater bicycle' propels swimmers forward at superhuman speed"
 date: 2024-08-10 08:01
-author: "mymsnn"
+author: "姜一一"
 tags: ["speed"]
 ---
 &emsp;&emsp;船只依靠螺旋桨推动前进，那么人类装上螺旋桨，不就能长距离游泳了吗？一家法国公司真的发明了这样的

@@ -1,7 +1,7 @@
 ---
 title: "介绍个这样的网站"
 date: 2024-08-03 08:01
-author: "mymsnn"
+author: "姜一一"
 tags: ["网站"]
 ---
 [饭太硬](http://饭太硬.com/)

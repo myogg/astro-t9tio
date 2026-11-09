@@ -1,7 +1,7 @@
 ---
 title: "生日有感(年存档)"
 date: 2024-07-31 08:03
-author: "mymsnn"
+author: "姜一一"
 tags: ["谢谢"]
 ---
 谢谢你们！

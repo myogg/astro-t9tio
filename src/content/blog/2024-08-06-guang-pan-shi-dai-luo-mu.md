@@ -1,7 +1,7 @@
 ---
 title: "光盘时代落幕"
 date: 2024-08-06 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["SuperDrive"]
 ---
 外置光驱SuperDrive在苹果美国官网、国行官网上显示为售罄状态。

@@ -1,7 +1,7 @@
 ---
 title: "Live Earth Wallpaper"
 date: 2024-08-10 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["apk"]
 ---
 [play](https://play.google.com/store/apps/details?id=com.earth.wallpaper)

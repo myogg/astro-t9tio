@@ -1,7 +1,7 @@
 ---
 title: "互扰星系Arp 142"
 date: 2024-07-18 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["天文"]
 ---
 韦伯影像：互扰星系Arp 142  

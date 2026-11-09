@@ -1,7 +1,7 @@
 ---
 title: "MIDI 文件可视化工具"
 date: 2024-08-17 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["3d"]
 ---
 是电脑版的

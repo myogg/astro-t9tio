@@ -1,7 +1,7 @@
 ---
 title: "Starliner 飞船"
 date: 2024-08-09 08:03
-author: "mymsnn"
+author: "姜一一"
 tags: ["Starliner"]
 ---
 美国宇航局最近遇到了一件尴尬的事情。

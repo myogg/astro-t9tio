@@ -1,7 +1,7 @@
 ---
 title: "在Github上写博客？最简单的方法！"
 date: 2024-07-29 08:02
-author: "mymsnn"
+author: "姜一一"
 tags: ["blog"]
 ---
 在Github上写博客？最简单的方法！
@@ -17,7 +17,7 @@ tags: ["blog"]
  ---
     layout:     post
     title:      about
-    author:     mymsnn
+    author:     姜一一
     catalog: 	 true
     tags:
     - blog

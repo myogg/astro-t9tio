@@ -1,7 +1,7 @@
 ---
 title: "瑞典游戏开发商占据 Steam 平台 20% 收入份额，成为全球游戏产业新霸主"
 date: 2025-12-29 08:00
-author: "Jekyll User"
+author: "姜一一"
 tags: ["Steam", "瑞典", "游戏开发", "市场分析"]
 ---
 ![](https://pic.imgdd.cc/item/695294e04cbb1cee5de7224c.jpg)

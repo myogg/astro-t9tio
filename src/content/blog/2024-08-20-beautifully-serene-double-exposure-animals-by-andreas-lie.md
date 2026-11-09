@@ -1,7 +1,7 @@
 ---
 title: "Beautifully Serene Double Exposure Animals by Andreas Lie"
 date: 2024-08-20 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["Beautifully"]
 ---
 ![](https://pic.imgdb.cn/item/66c4937ad9c307b7e9cbb1ed.webp)

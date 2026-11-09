@@ -1,7 +1,7 @@
 ---
 title: "光通信"
 date: 2024-08-07 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["PCIe"]
 ---
 目前，在计算机的内部，CPU 与周边设备都使用 PCIe 接口进行通信。

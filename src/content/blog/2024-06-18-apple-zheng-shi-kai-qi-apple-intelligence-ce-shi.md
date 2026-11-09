@@ -1,7 +1,7 @@
 ---
 title: "Apple 正式开启 Apple Intelligence 测试"
 date: 2024-06-18 08:00
-author: "mymsnn"
+author: "姜一一"
 tags: ["blog"]
 ---
 Apple 正式开启 Apple Intelligence 测试

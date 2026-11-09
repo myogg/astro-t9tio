@@ -1,7 +1,7 @@
 ---
 title: "一个开源的双因素认证码管理器"
 date: 2024-09-01 08:01
-author: "mymsnn"
+author: "姜一一"
 tags: ["blog"]
 ---
 https://github.com/sponsors/ente-io

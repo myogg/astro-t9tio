@@ -1,7 +1,7 @@
 ---
 title: "柏林室内泳池"
 date: 2024-08-09 08:01
-author: "mymsnn"
+author: "姜一一"
 tags: ["柏林"]
 ---
 ![](https://pic.imgdb.cn/item/66b60214d9c307b7e9b5fb08.webp)
