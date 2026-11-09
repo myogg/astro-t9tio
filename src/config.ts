@@ -51,10 +51,10 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  title: "Jreey's blog",
+  title: "姜一一的博客",
   subtitle: '',
-  description: "Jreey's personal blog",
-  author: 'Jreey',
+  description: "姜一一的个人博客",
+  author: '姜一一',
   authorUrl: 'https://github.com/myogg',
   language: 'en',
   url: '',
