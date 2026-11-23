@@ -30,3 +30,11 @@
 - Codex2API content commit: `9bb08d5f6733411f5a85ab5e39148b23be111f56`.
 - TRMNL.Bar content commit: `e20732bb9a2d241c4c271ccdbdca3a8c0be7ca56`.
 - Deployment status: not yet verified.
+
+
+## Permanent article authoring rule (2026-11-23)
+- The article page template renders the page-level title from frontmatter `title`. Do not repeat that title as a leading Markdown H1 (`# ...`) in the article body.
+- Article body content should begin directly with prose or media. Use `##` for the first section heading and `###` for subsections.
+- Before publishing or updating any Markdown article, inspect the body after the closing frontmatter delimiter and check for a duplicate leading H1, especially one matching the frontmatter title. Remove or correct duplicates before commit.
+- After publishing, verify the rendered article page shows exactly one page-level title.
+- This is a standing content rule for all future articles in `myogg/astro-t9tio`, not just the three articles from 2026-11-23.
