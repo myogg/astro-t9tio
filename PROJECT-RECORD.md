@@ -35,6 +35,8 @@
 ## Deployment and verification
 
 - Code is on the isolated test branch; `main` has not been changed.
-- Build status: **not yet verified**. This repository currently has no GitHub Actions workflow in its tree; run `npm ci`, `npm run check`, and `npm run build` before merging or deploying.
+- Build status: **passed on GitHub Actions**. Workflow `Check Illacrimo theme` run #1, commit `db30ba70634ac89275d45e8549803d366dbf891c`; `npm ci`, `npm run check`, and `npm run build` all completed successfully. Run: https://github.com/myogg/astro-t9tio/actions/runs/45097551843
 - Visual review still needed at desktop, tablet, and phone widths.
 - The sidebar entrance animation is a CSS implementation inspired by the original behavior; exact pixel/timing parity with the original WordPress script has not yet been verified.
+
+- `db30ba70634ac89275d45e8549803d366dbf891c` — add GitHub Actions CI; first check and production build passed.
