@@ -4,7 +4,7 @@
 
 - Repository: `myogg/astro-t9tio`
 - Working branch: `illacrimo-theme-rebuild`
-- Base branch: `main`
+- Production branch: `main`
 - Base commit: `89c8d918b35b90691b5444e772966920982a4d64`
 - Design reference: Illacrimo Plus 2.0.4 (2008-era WordPress theme)
 - Goal: vivid navy / cyan / white palette, three-column desktop layout, animated sidebars, single-column mobile layout.
@@ -21,17 +21,24 @@
 | `src/pages/[...slug].astro` | Render article pages inside shared frame; retain TTS and Giscus |
 | `README.md` | Update project description and structure |
 | `.github/workflows/astro-ci.yml` | Run npm ci, Astro check, and Astro build on branch pushes and PRs |
-| `.github/workflows/illacrimo-preview.yml` | Build and deploy the theme branch to a separate Cloudflare Worker named `astro-t9tio-preview`; never deploy to the production Worker |
+| `.github/workflows/illacrimo-check.yml` | Additional branch validation workflow |
 
 ## Verification and deployment
 
-- All work remains on `illacrimo-theme-rebuild`; `main` has not been changed or merged.
-- CI workflow added in commit `2e3e557a252698140ed40de5738b9fab17a404ff`.
-- GitHub Actions run #2 (`45098110792`) passed: install, `npm run check`, and `npm run build`.
-- Latest documentation update also triggered run #4 (`45098199813`), which passed all steps.
-- Preview workflow commit: `be382db49a0d716949e85c3ffa261563b7a61912`.
-- Preview deployment requires GitHub repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. If either is absent, the workflow still builds and clearly reports that deployment is waiting for credentials.
-- Intended preview hostname after successful deployment: `https://astro-t9tio-preview.xxjss.workers.dev`; this URL is not yet verified.
-- Production Worker `astro-t9tio` and its custom domain `jiangnana.dpdns.org` are not targeted by the preview workflow.
+- All theme work is on `illacrimo-theme-rebuild`; `main` remains unchanged until PR #3 is merged.
+- PR #3: `https://github.com/myogg/astro-t9tio/pull/3`.
+- Existing branch CI run #6 (`45098291942`) passed: install, `npm run check`, and `npm run build`.
+- The repository's Cloudflare Worker configuration uses Wrangler with Worker name `astro-t9tio` and static assets in `dist`.
+- User confirmed Cloudflare automatically builds/deploys when the connected production branch in this repository is changed. The intended production path is therefore to update `main`, not create a second Worker.
+- Before production deployment, preserve the current Cloudflare production version so it can be rolled back if necessary.
+- Production Worker hostname: `astro-t9tio.xxjss.workers.dev`; custom domain: `jiangnana.dpdns.org`.
+- Deployment after merging PR #3 must be verified in Cloudflare before claiming success.
 - Desktop, tablet, and phone visual review remains outstanding.
 - Sidebar motion is a CSS implementation inspired by Illacrimo Plus; exact parity with the original WordPress animation is not verified.
+
+## Recent commits
+
+- Added preview workflow temporarily, then removed it after confirming the user wants to use the existing Cloudflare production build path:
+  - add: `be382db49a0d716949e85c3ffa261563b7a61912`
+  - remove: `411561db720a0cbedfcce910df81677528d3bdc5`
+- Project record updated to reflect the existing Cloudflare deployment workflow.
