@@ -38,3 +38,12 @@
 - Before publishing or updating any Markdown article, inspect the body after the closing frontmatter delimiter and check for a duplicate leading H1, especially one matching the frontmatter title. Remove or correct duplicates before commit.
 - After publishing, verify the rendered article page shows exactly one page-level title.
 - This is a standing content rule for all future articles in `myogg/astro-t9tio`, not just the three articles from 2026-11-23.
+
+
+## 2026-11-23 fiber-optic drone / bird-nest article published separately
+- After reverting the incorrect theme migration, the article was restored to `main` as a standalone content change; no theme files were merged.
+- Added `src/content/blog/2026-11-23-guangxian-wurenji-guangxianniaochao.md`.
+- Added local WebP assets: `public/images/articles/fiber-optic-bird-nest.webp` and `public/images/articles/fiber-optic-drone.webp`; the article uses repository-local image paths and retains source/license credits.
+- Commit: `21f43ad466831080fafbe57d535f62125a640838`.
+- Deployment status: not yet verified.
+- Branch `illacrimo-theme-rebuild`: deletion is still pending; do not merge it into `main`.
