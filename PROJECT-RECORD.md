@@ -21,6 +21,7 @@
 | `src/pages/[...slug].astro` | Render article pages inside shared frame; retain TTS and Giscus |
 | `README.md` | Update project description and structure |
 | `.github/workflows/astro-ci.yml` | Run npm ci, Astro check, and Astro build on branch pushes and PRs |
+| `.github/workflows/illacrimo-preview.yml` | Build and deploy the theme branch to a separate Cloudflare Worker named `astro-t9tio-preview`; never deploy to the production Worker |
 
 ## Verification and deployment
 
@@ -28,6 +29,9 @@
 - CI workflow added in commit `2e3e557a252698140ed40de5738b9fab17a404ff`.
 - GitHub Actions run #2 (`45098110792`) passed: install, `npm run check`, and `npm run build`.
 - Latest documentation update also triggered run #4 (`45098199813`), which passed all steps.
+- Preview workflow commit: `be382db49a0d716949e85c3ffa261563b7a61912`.
+- Preview deployment requires GitHub repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. If either is absent, the workflow still builds and clearly reports that deployment is waiting for credentials.
+- Intended preview hostname after successful deployment: `https://astro-t9tio-preview.xxjss.workers.dev`; this URL is not yet verified.
+- Production Worker `astro-t9tio` and its custom domain `jiangnana.dpdns.org` are not targeted by the preview workflow.
 - Desktop, tablet, and phone visual review remains outstanding.
 - Sidebar motion is a CSS implementation inspired by Illacrimo Plus; exact parity with the original WordPress animation is not verified.
-- No Cloudflare Preview URL has been verified yet.
