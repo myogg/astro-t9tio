@@ -22,6 +22,7 @@
 | `README.md` | Update project description and structure |
 | `.github/workflows/astro-ci.yml` | Run npm ci, Astro check, and Astro build on branch pushes and PRs |
 | `.github/workflows/illacrimo-check.yml` | Additional branch validation workflow |
+| `src/content/blog/2026-11-23-guangxian-wurenji-guangxianniaochao.md` | Add Chinese article on fiber-optic drone cables and bird nests; embed two credited source images |
 
 ## Verification and deployment
 
@@ -35,6 +36,9 @@
 - Deployment after merging PR #3 must be verified in Cloudflare before claiming success.
 - Desktop, tablet, and phone visual review remains outstanding.
 - Sidebar motion is a CSS implementation inspired by Illacrimo Plus; exact parity with the original WordPress animation is not verified.
+- 2026-11-23 article commit: `b4c9818bda53221efd84c05bcfc0e7f520d171d9`.
+- The two article images are embedded from the original National Geographic Media image CDN with visible source/license credits; the binary image files were not copied into this repository.
+- The article is on the working branch only; production deployment is not verified.
 
 ## Recent commits
 
