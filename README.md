@@ -1,10 +1,10 @@
 # t9t-blog-astro
 
-An [Astro](https://astro.build) port of the `t9t-blog-hexo` Hexo theme
-([source](https://github.com/t9tio/blog/tree/master/themes/t9t-blog-hexo)).
-
-The visual output is intentionally identical to the original theme — the three
-original stylesheets are reused unchanged.
+An [Astro](https://astro.build) blog based on the `t9t-blog-hexo` content structure,
+with a responsive Illacrimo-inspired visual redesign. The desktop layout uses
+three columns with animated sidebars; the mobile layout stacks the article and
+sidebars into one readable column. Existing Astro content, TTS, Giscus and RSS
+features remain part of the project.
 
 ## Requirements
 
@@ -31,7 +31,7 @@ src/
 ├── layouts/
 │   └── BaseLayout.astro   # <html>, <head>, footer, analytics
 ├── components/
-│   ├── Header.astro       # index header
+│   ├── Header.astro       # legacy header component\n│   ├── IllacrimoFrame.astro # responsive three-column site frame
 │   ├── Menu.astro         # optional nav bar from site.menu
 │   ├── PostCard.astro     # post excerpt card
 │   ├── TtsPlayer.astro    # read-aloud player (post pages)
