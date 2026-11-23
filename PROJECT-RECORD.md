@@ -46,3 +46,15 @@
   - add: `be382db49a0d716949e85c3ffa261563b7a61912`
   - remove: `411561db720a0cbedfcce910df81677528d3bdc5`
 - Project record updated to reflect the existing Cloudflare deployment workflow.
+
+## 2026-11-23 article image localization
+
+- Article: `src/content/blog/2026-11-23-guangxian-wurenji-guangxianniaochao.md`.
+- Added dedicated article image directory: `public/images/articles/`.
+- Added `fiber-optic-bird-nest.webp` and `fiber-optic-drone.webp`; optimized WebP assets, 640px maximum width.
+- Replaced both third-party CDN image references with local `/images/articles/...` paths.
+- Image source and license credits remain in the article.
+- Image blobs: nest `b2219c631a68dee58017655c7b758483354198e6`; drone `2515f11a237adb8dd4952b010aef5ba73ae0ca93`.
+- Image tree commit: `89e02e72cb59ca0b4b5d032788e7053be6ece390`.
+- Article reference update commit: `a63dfb4c8d2a84b0c0614abc0d39fd7352de7d1f`.
+- All changes remain on `illacrimo-theme-rebuild`; production branch `main` was not changed. Deployment must be checked separately.
