@@ -23,3 +23,10 @@
 
 ## Notes
 - Article content removed from the current `main` tree was not erased from Git history. Existing Git history and the backup branch retain earlier versions.
+
+
+## 2026-11-23 article heading consistency
+- Removed the duplicate leading H1 from `src/content/blog/2026-11-23-codex2api-supply-chain-incident.md` and `src/content/blog/2026-11-23-trmnl-bar-desktop-dashboard.md`. The frontmatter `title` remains the sole page-level article title; body section headings continue from `##`.
+- Codex2API content commit: `9bb08d5f6733411f5a85ab5e39148b23be111f56`.
+- TRMNL.Bar content commit: `e20732bb9a2d241c4c271ccdbdca3a8c0be7ca56`.
+- Deployment status: not yet verified.
