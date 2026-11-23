@@ -2,11 +2,11 @@
 import Footer from '../components/Footer.astro';
 import { site } from '../config';
 
-// Reuses the original theme CSS unchanged.
 import '../styles/bulma.css';
 import '../styles/index.css';
 import '../styles/blog.css';
 import '../styles/openai-font.css';
+import '../styles/illacrimo.css';
 
 interface Props {
   title?: string;
@@ -20,12 +20,13 @@ const {
 ---
 
 <!doctype html>
-<html lang={site.language}>
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content={site.author} />
+    <meta name="theme-color" content="#1a3265" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -35,48 +36,11 @@ const {
     <link rel="bookmark" href="/favicon/favicon.ico" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
 
-    <!-- Fonts: connect early and warm the cache to avoid a swap flash.
-         The CJK webfonts are dynamically subsetted (unicode-range), so we
-         preconnect to their origins instead of preloading individual files. -->
-    <link rel="preconnect" href="https://fonts.loli.net" crossorigin />
-    <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-
-    <link
-      rel="stylesheet"
-      href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@800;900&display=swap&v=2"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/oppo-sans@1.0.0/dist/oppo-sans.css?v=2"
-    />
-
-    <!-- Local Latin font used first by both font stacks — preload it. -->
-    <link
-      rel="preload"
-      href="/fonts/Inter-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/Inter-Medium.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-
     <slot name="head" />
   </head>
 
   <body>
     <slot />
-
     <Footer />
 
     {site.googleAnalytics && (
