@@ -1,7 +1,8 @@
 ---
+// Port of `layout/post.ejs` — single post page.
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import IllacrimoFrame from '../components/IllacrimoFrame.astro';
+import Header from '../components/Header.astro';
 import { site } from '../config';
 import { formatDate } from '../utils/date';
 import TtsPlayer from '../components/TtsPlayer.astro';
@@ -17,31 +18,29 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
 const description = post.data.description ?? site.description;
 ---
 
 <BaseLayout title={post.data.title} description={description}>
-  <IllacrimoFrame posts={posts}>
-    <div class="post-container post-page">
-      <header class="post-header">
-        <p class="post-meta">{formatDate(post.data.date)}</p>
-        <h1 class="post-title">{post.data.title}</h1>
-        {post.data.description && <p class="post-summary">{post.data.description}</p>}
-      </header>
+  <Header />
 
-      <div class="post-actions">
-        <TtsPlayer />
-      </div>
+  <div class="section container post-container post-page">
+    <header class="post-header">
+      <p class="post-meta">{formatDate(post.data.date)}</p>
+      <h1 class="post-title">{post.data.title}</h1>
+      {post.data.description && <p class="post-summary">{post.data.description}</p>}
+    </header>
 
-      <article id="article-content" class="markdown-body">
-        <Content />
-      </article>
-
-      <hr />
-      <Giscus />
+    <div class="post-actions">
+      <TtsPlayer />
     </div>
-  </IllacrimoFrame>
+
+    <article id="article-content" class="markdown-body">
+      <Content />
+    </article>
+
+    <hr />
+
+    <Giscus />
+  </div>
 </BaseLayout>
