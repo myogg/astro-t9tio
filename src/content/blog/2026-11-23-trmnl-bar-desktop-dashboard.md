@@ -9,8 +9,6 @@ tags:
   - 开源项目
 ---
 
-# 把 TRMNL 墨水屏看板显示在电脑上
-
 TRMNL 是一个开源的墨水屏看板系统。借助 **[TRMNL.Bar](https://github.com/miantiao-me/TRMNL.Bar)**，现在也可以通过电脑上的 [Metrix.Bar](https://metrix.bar/) 查看 TRMNL 看板。
 
 ![TRMNL 看板在电脑上的显示效果](https://i.134688.xyz/file/1795436632636_IMG_20261123_202203_269.webp)
