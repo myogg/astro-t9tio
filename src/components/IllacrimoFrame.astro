@@ -1,0 +1,96 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { site } from '../config';
+import { formatMonthYear } from '../utils/date';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { posts } = Astro.props;
+const recentPosts = posts.slice(0, 6);
+const years = [...new Set(posts.map((post) => post.data.date.getFullYear()))].slice(0, 6);
+---
+
+<div class="ill-site">
+  <header class="ill-header">
+    <div class="ill-brand">
+      <a class="ill-brand-mark" href="/" aria-label="首页">i</a>
+      <div class="ill-brand-copy">
+        <a class="ill-brand-title" href="/">{site.title}</a>
+        <p>{site.subtitle || '记录生活，分享所见'}</p>
+      </div>
+      <div class="ill-brand-cloud" aria-hidden="true">Ideas · Stories · Life · Web</div>
+    </div>
+    <nav class="ill-nav" aria-label="主导航">
+      <a href="/" aria-current="page">首页</a>
+      <a href="/rss.xml">RSS 订阅</a>
+      <a href={site.authorUrl}>关于作者</a>
+    </nav>
+  </header>
+
+  <div class="ill-columns">
+    <main class="ill-main">
+      <slot />
+    </main>
+
+    <aside class="ill-middle" aria-label="站点动态">
+      <section class="ill-widget ill-search-widget">
+        <form action="/" method="get" role="search">
+          <label class="ill-sr-only" for="ill-search">站内搜索</label>
+          <input id="ill-search" type="search" name="q" placeholder="站内搜索…" />
+          <button type="submit" aria-label="搜索">⌕</button>
+        </form>
+      </section>
+
+      <section class="ill-widget">
+        <h2>Recent Posts</h2>
+        <ul class="ill-link-list">
+          {recentPosts.map((post) => (
+            <li><a href={`/${post.id}/`}>{post.data.title}</a><small>{formatMonthYear(post.data.date)}</small></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="ill-widget">
+        <h2>Stay Connected</h2>
+        <p class="ill-widget-note">这里记录新的文章、日常片段，以及值得留下来的想法。</p>
+        <a class="ill-pill-link" href="/rss.xml">订阅 RSS</a>
+      </section>
+
+      <section class="ill-widget">
+        <h2>About</h2>
+        <p class="ill-widget-note">{site.description}</p>
+      </section>
+    </aside>
+
+    <aside class="ill-right" aria-label="文章归档">
+      <section class="ill-widget">
+        <h2>Pages</h2>
+        <ul class="ill-link-list compact">
+          <li><a href="/">首页</a></li>
+          <li><a href="/rss.xml">RSS Feed</a></li>
+          <li><a href={site.authorUrl}>GitHub</a></li>
+        </ul>
+      </section>
+
+      <section class="ill-widget">
+        <h2>Archives</h2>
+        <ul class="ill-link-list compact">
+          {years.map((year) => (
+            <li><a href={`/?year=${year}`}>{year} 年</a></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="ill-widget">
+        <h2>Meta</h2>
+        <ul class="ill-link-list compact">
+          <li><a href="/rss.xml">文章 RSS</a></li>
+          <li><a href="/rss.xml">评论订阅</a></li>
+          <li><a href="https://github.com/myogg/astro-t9tio">Theme source</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</div>
