@@ -38,3 +38,16 @@
 - Before publishing or updating any Markdown article, inspect the body after the closing frontmatter delimiter and check for a duplicate leading H1, especially one matching the frontmatter title. Remove or correct duplicates before commit.
 - After publishing, verify the rendered article page shows exactly one page-level title.
 - This is a standing content rule for all future articles in `myogg/astro-t9tio`, not just the three articles from 2026-11-23.
+
+
+## 2026-11-23 Illacrimo theme migration to main
+
+- User requested that ongoing work use `main` directly rather than a separate test branch.
+- Migrated the responsive Illacrimo-inspired site frame and stylesheet to `main`, while retaining the current `main` history, article collection, homepage spacing, TTS, Giscus, RSS, and Cloudflare Worker configuration.
+- Added `src/components/IllacrimoFrame.astro` and `src/styles/illacrimo.css`.
+- Updated `src/layouts/BaseLayout.astro`, `src/pages/index.astro`, and `src/pages/[...slug].astro` to use the shared frame.
+- Updated site branding to `Jreely'blog` and set the document language to Chinese; removed the header subtitle/tagline per the user's prior instruction.
+- Added the fiber-optic drone / bird-nest article at `src/content/blog/2026-11-23-guangxian-wurenji-guangxianniaochao.md`.
+- Added locally stored WebP assets under `public/images/articles/`: `fiber-optic-bird-nest.webp` and `fiber-optic-drone.webp`. Article references use local paths; source and license credits are retained.
+- The current `main` commit before migration was `123706dc4458c29dbf3050bb69c142aa38dfa68c`. Migration is based on that commit, not on the old test-branch base.
+- Production deployment and responsive visual review must be verified after the main-branch commit.
