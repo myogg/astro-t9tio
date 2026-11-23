@@ -25,9 +25,9 @@
 ## Verification and deployment
 
 - All work remains on `illacrimo-theme-rebuild`; `main` has not been changed or merged.
-- CI workflow was added in commit `2e3e557a252698140ed40de5738b9fab17a404ff`.
-- GitHub Actions run #2 (`45098110792`) was observed as **in progress** at the time of this update. Do not mark the build as passed until its conclusion is confirmed.
-- Earlier notes referred to run #1, but its result could not be independently confirmed from the current workflow-run lookup.
+- CI workflow added in commit `2e3e557a252698140ed40de5738b9fab17a404ff`.
+- GitHub Actions run #2 (`45098110792`) passed: install, `npm run check`, and `npm run build`.
+- Latest documentation update also triggered run #4 (`45098199813`), which passed all steps.
 - Desktop, tablet, and phone visual review remains outstanding.
 - Sidebar motion is a CSS implementation inspired by Illacrimo Plus; exact parity with the original WordPress animation is not verified.
-- No Cloudflare preview URL has been verified yet.
+- No Cloudflare Preview URL has been verified yet.
