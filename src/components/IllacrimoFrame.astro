@@ -9,13 +9,15 @@ interface Props {
 
 const { posts } = Astro.props;
 const recentPosts = posts.slice(0, 6);
-const years = [...new Set(posts.map((post) => post.data.date.getFullYear()))].slice(0, 6);
+const years = [...new Set(posts.map((post) => post.data.date.getFullYear()))].slice(0, 8);
 ---
 
 <div class="ill-site">
   <header class="ill-header">
     <div class="ill-brand">
-      <a class="ill-brand-mark" href="/" aria-label="首页">i</a>
+      <a class="ill-brand-mark" href="/" aria-label="首页">
+        <img src="/favicon/favicon.ico" alt="" width="40" height="40" />
+      </a>
       <div class="ill-brand-copy">
         <a class="ill-brand-title" href="/">{site.title}</a>
         <p>{site.subtitle || '记录生活，分享所见'}</p>
@@ -35,14 +37,6 @@ const years = [...new Set(posts.map((post) => post.data.date.getFullYear()))].sl
     </main>
 
     <aside class="ill-middle" aria-label="站点动态">
-      <section class="ill-widget ill-search-widget">
-        <form action="/" method="get" role="search">
-          <label class="ill-sr-only" for="ill-search">站内搜索</label>
-          <input id="ill-search" type="search" name="q" placeholder="站内搜索…" />
-          <button type="submit" aria-label="搜索">⌕</button>
-        </form>
-      </section>
-
       <section class="ill-widget">
         <h2>Recent Posts</h2>
         <ul class="ill-link-list">
@@ -53,9 +47,12 @@ const years = [...new Set(posts.map((post) => post.data.date.getFullYear()))].sl
       </section>
 
       <section class="ill-widget">
-        <h2>Stay Connected</h2>
-        <p class="ill-widget-note">这里记录新的文章、日常片段，以及值得留下来的想法。</p>
-        <a class="ill-pill-link" href="/rss.xml">订阅 RSS</a>
+        <h2>Connect Me</h2>
+        <p class="ill-widget-note">记录新的文章、日常片段，以及值得留下来的想法。</p>
+        <div class="ill-social-links">
+          <a href="/rss.xml">RSS</a>
+          <a href={site.authorUrl}>GitHub</a>
+        </div>
       </section>
 
       <section class="ill-widget">
@@ -64,7 +61,7 @@ const years = [...new Set(posts.map((post) => post.data.date.getFullYear()))].sl
       </section>
     </aside>
 
-    <aside class="ill-right" aria-label="文章归档">
+    <aside class="ill-right" aria-label="站点导航和归档">
       <section class="ill-widget">
         <h2>Pages</h2>
         <ul class="ill-link-list compact">
@@ -78,7 +75,7 @@ const years = [...new Set(posts.map((post) => post.data.date.getFullYear()))].sl
         <h2>Archives</h2>
         <ul class="ill-link-list compact">
           {years.map((year) => (
-            <li><a href={`/?year=${year}`}>{year} 年</a></li>
+            <li><span>{year} 年</span></li>
           ))}
         </ul>
       </section>
@@ -87,7 +84,6 @@ const years = [...new Set(posts.map((post) => post.data.date.getFullYear()))].sl
         <h2>Meta</h2>
         <ul class="ill-link-list compact">
           <li><a href="/rss.xml">文章 RSS</a></li>
-          <li><a href="/rss.xml">评论订阅</a></li>
           <li><a href="https://github.com/myogg/astro-t9tio">Theme source</a></li>
         </ul>
       </section>
