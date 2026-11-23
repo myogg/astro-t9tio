@@ -289,3 +289,18 @@ body > .footer, .footer {
 @media (prefers-reduced-motion: reduce) {
   .ill-middle, .ill-right { animation: none; }
 }
+
+.ill-brand-mark { overflow: hidden; }
+.ill-brand-mark img { display: block; width: 40px; height: 40px; object-fit: contain; }
+.ill-social-links { display: flex; gap: 8px; margin-top: 10px; }
+.ill-social-links a {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 14px;
+  color: #07577e;
+  background: #b9e9fa;
+  text-decoration: none;
+  font-weight: 700;
+}
+.ill-excerpt { margin: 8px 0 0; color: #627c8a; font-size: 13px; line-height: 1.7; }
+.ill-link-list span { color: #d2e7f0; }
