@@ -5,18 +5,19 @@
 - Pre-rollback snapshot preserved on branch `backup-before-rollback-2026-11-23` (starting SHA `d5f374412fdacbae51721beefe0cf7f4691917ca`).
 
 ## 2026-11-23 changes
-- `src/pages/index.astro`: increased homepage article-list item bottom spacing from 15px to 28px; preserved valid Astro frontmatter and markup.
-- `src/content/blog/`: removed all 318 Markdown article files at the user's request; theme, layouts, components, configuration, styles, and site code were retained.
+- `src/pages/index.astro`: increased homepage article-list item bottom spacing from 15px to 28px.
+- `src/content/blog/`: removed the original 318 Markdown articles at the user's request; theme and site functionality were retained.
+- Added TRMNL.Bar introduction: `src/content/blog/2026-11-23-trmnl-bar-desktop-dashboard.md`. The article includes both user-provided images and the project link. It was shortened at the user's request.
 
 ## Commits
 - Homepage spacing: `3568a4ec5cc42ed7ca7b1e954a9083358abde65b`.
 - Remove 318 articles: `f5ea241de4105b27d909229062e6e36712b0f90e`.
+- Codex2API security article: `259bd6fc25eb9d8d804497ed84d879a9aba41ee3`.
+- TRMNL.Bar article initial commit: `cfaec24dfc679446522e218c69bfd1d27ed85630`.
 
 ## Deployment
 - User confirmed the prior rollback deployment succeeded.
-- The homepage-spacing and article-removal commits were pushed to `main`. A Codex2API supply-chain security alert was added on 2026-11-23; deployment for the latest article commit has not yet been independently verified.
-
-- Security alert article: `src/content/blog/2026-11-23-codex2api-supply-chain-incident.md` (commit `259bd6fc25eb9d8d804497ed84d879a9aba41ee3`).
+- Deployment status for the latest TRMNL.Bar article update has not yet been independently verified.
 
 ## Notes
-- Article content was removed from the current `main` tree, not erased from Git history. Existing Git history and the backup branch retain the earlier versions.
+- Article content removed from the current `main` tree was not erased from Git history. Existing Git history and the backup branch retain earlier versions.
