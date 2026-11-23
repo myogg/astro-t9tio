@@ -51,3 +51,5 @@
 - Added locally stored WebP assets under `public/images/articles/`: `fiber-optic-bird-nest.webp` and `fiber-optic-drone.webp`. Article references use local paths; source and license credits are retained.
 - The current `main` commit before migration was `123706dc4458c29dbf3050bb69c142aa38dfa68c`. Migration is based on that commit, not on the old test-branch base.
 - Production deployment and responsive visual review must be verified after the main-branch commit.
+
+- Main migration commit: `3a3952f73d3f4c9ef7388e4ae78ca617ca15183e`.
