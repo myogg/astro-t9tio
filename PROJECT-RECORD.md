@@ -14,7 +14,9 @@
 
 ## Deployment
 - User confirmed the prior rollback deployment succeeded.
-- The current homepage-spacing and article-removal commits were pushed to `main`; deployment for these latest commits has not yet been independently verified.
+- The homepage-spacing and article-removal commits were pushed to `main`. A Codex2API supply-chain security alert was added on 2026-11-23; deployment for the latest article commit has not yet been independently verified.
+
+- Security alert article: `src/content/blog/2026-11-23-codex2api-supply-chain-incident.md` (commit `259bd6fc25eb9d8d804497ed84d879a9aba41ee3`).
 
 ## Notes
 - Article content was removed from the current `main` tree, not erased from Git history. Existing Git history and the backup branch retain the earlier versions.
