@@ -45,9 +45,9 @@
 - Deployment status: not yet verified.
 - Branch `illacrimo-theme-rebuild`: deletion is still pending; do not merge it into `main`.
 
-## 2026-11-24 Telegram 13.3 article
-- Added `src/content/blog/2026-11-24-telegram-13-3-update.md` to `main`.
-- Article preserves the supplied update details: voice-to-text while recording, group-call live captions, unread filtering in folders, redesigned profiles, AI translation input, Android transcription timestamps, Premium limits, and download channels.
-- Article commit: `fc60afe4ec4ba05dc563ef7a9a08f1a73266cf48`.
+## 2026-11-24 Telegram 13.3 article and image
+- Added `src/content/blog/2026-11-24-telegram-13-3-update.md` to `main`; the article uses the repository-local image `/images/articles/telegram-13-3-update.webp`.
+- Added the supplied Telegram screenshot as `public/images/articles/telegram-13-3-update.webp` (WebP, approximately 7 KB).
+- Article content commit: `fc60afe4ec4ba05dc563ef7a9a08f1a73266cf48`; project-record update: `ea201b09802eac60773b28562d50de1ae2509149`.
+- Image commit: `6d5c068f817390f38d14ddf2bf38152ce27ff8fe`.
 - Deployment status: not yet verified.
-- The uploaded Telegram screenshot has not yet been added as a repository-local WebP asset; the published article currently contains text only.
