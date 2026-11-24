@@ -24,13 +24,11 @@
 ## Notes
 - Article content removed from the current `main` tree was not erased from Git history. Existing Git history and the backup branch retain earlier versions.
 
-
 ## 2026-11-23 article heading consistency
 - Removed the duplicate leading H1 from `src/content/blog/2026-11-23-codex2api-supply-chain-incident.md` and `src/content/blog/2026-11-23-trmnl-bar-desktop-dashboard.md`. The frontmatter `title` remains the sole page-level article title; body section headings continue from `##`.
 - Codex2API content commit: `9bb08d5f6733411f5a85ab5e39148b23be111f56`.
 - TRMNL.Bar content commit: `e20732bb9a2d241c4c271ccdbdca3a8c0be7ca56`.
 - Deployment status: not yet verified.
-
 
 ## Permanent article authoring rule (2026-11-23)
 - The article page template renders the page-level title from frontmatter `title`. Do not repeat that title as a leading Markdown H1 (`# ...`) in the article body.
@@ -39,7 +37,6 @@
 - After publishing, verify the rendered article page shows exactly one page-level title.
 - This is a standing content rule for all future articles in `myogg/astro-t9tio`, not just the three articles from 2026-11-23.
 
-
 ## 2026-11-23 fiber-optic drone / bird-nest article published separately
 - After reverting the incorrect theme migration, the article was restored to `main` as a standalone content change; no theme files were merged.
 - Added `src/content/blog/2026-11-23-guangxian-wurenji-guangxianniaochao.md`.
@@ -47,3 +44,10 @@
 - Commit: `21f43ad466831080fafbe57d535f62125a640838`.
 - Deployment status: not yet verified.
 - Branch `illacrimo-theme-rebuild`: deletion is still pending; do not merge it into `main`.
+
+## 2026-11-24 Telegram 13.3 article
+- Added `src/content/blog/2026-11-24-telegram-13-3-update.md` to `main`.
+- Article preserves the supplied update details: voice-to-text while recording, group-call live captions, unread filtering in folders, redesigned profiles, AI translation input, Android transcription timestamps, Premium limits, and download channels.
+- Article commit: `fc60afe4ec4ba05dc563ef7a9a08f1a73266cf48`.
+- Deployment status: not yet verified.
+- The uploaded Telegram screenshot has not yet been added as a repository-local WebP asset; the published article currently contains text only.
