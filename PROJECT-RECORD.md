@@ -80,3 +80,9 @@
 - No image was supplied, so no image asset was added.
 - No theme, layout, CSS, configuration, homepage, or existing article files were changed.
 - Deployment status: not yet verified; the article commit is on `main`, but Cloudflare deployment and the rendered page still need checking.
+
+
+## 2026-11-28 — GTA 6 article formatting revision
+- Per user request, removed all section headings from the GTA 6 article body and retained the content as continuous prose, including the quoted GitHub post and source links.
+- Update commit: `4034a40db13f0019264faf5436cea4a3ce7c22a2`.
+- Only the article file was changed; deployment status remains unverified.
