@@ -68,3 +68,15 @@
 - No image was supplied, so no image asset was added.
 - No theme, layout, CSS, configuration, homepage, or existing article files were changed.
 - Deployment status: not yet verified; the article commit is on `main`, but the Cloudflare deployment and rendered page still need checking.
+
+
+## 2026-11-28 — GTA 6 unofficial PC port progress article
+- Added `src/content/blog/2026-11-28-gta6-unofficial-pc-port-30fps.md` to `main`.
+- Article title: 过场动画已达 30FPS！民间移植 PC 版《GTA6》游戏突飞猛进.
+- Commit: `e8055f16597ebc08bb19ec890ee238c85952dddb`.
+- Based on the user's Chinese draft and cross-checked reports from IT之家, PortWatch VI, Notebookcheck, GitHub's public DMCA notice, and PC Gamer.
+- Covers reported CGBJ / NotNozy progress and frame rates, the unverified Boyoo private-build claim, the alleged PS5 game-file dump, Take-Two's DMCA takedown affecting a network of 3,007 repositories, and GitHub's deleted AnyPS5 promotional post.
+- The article distinguishes reported cutscene peaks around 30 FPS from reported gameplay performance around 20–25 FPS and notes that independent reproduction, test conditions, and stability remain uncertain.
+- No image was supplied, so no image asset was added.
+- No theme, layout, CSS, configuration, homepage, or existing article files were changed.
+- Deployment status: not yet verified; the article commit is on `main`, but Cloudflare deployment and the rendered page still need checking.
