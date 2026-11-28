@@ -57,3 +57,14 @@
 - Added the user-supplied banner as `public/images/articles/telegram-bot-api-10-5.webp` (WebP, 1200px wide, 10,860 bytes).
 - Astro article, image, and this project-record update were committed together: `cae59f4ea93caf82fe00f9ecd7e83d5aa3d325e5`.
 - Deployment status: not yet verified.
+
+
+## 2026-11-28 — Windows built-in device drivers article
+- Added `src/content/blog/2026-11-28-microsoft-windows-inbox-drivers.md` to `main`.
+- Article title: 微软推进以 Windows 内置驱动取代部分第三方驱动.
+- Commit: `66e576a1a808e0e09280cee47e3520e18ef92365`.
+- Based on the user's Chinese source text and TechSpot's report published Nov 27, 2026: https://www.techspot.com/news/114721-microsoft-wants-replace-most-third-party-device-drivers.html.
+- Covers Windows Ready Print, SoundWire, SDCA, I3C, USB Ethernet, MIPI camera class drivers, and Microsoft's Driver Quality Initiative (DQI). No unsupported claim that third-party drivers will immediately disappear.
+- No image was supplied, so no image asset was added.
+- No theme, layout, CSS, configuration, homepage, or existing article files were changed.
+- Deployment status: not yet verified; the article commit is on `main`, but the Cloudflare deployment and rendered page still need checking.
